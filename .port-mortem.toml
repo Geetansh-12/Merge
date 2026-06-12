@@ -1,0 +1,17 @@
+track = "F"
+source_repo = "https://github.com/markedjs/marked"
+source_version = "13.0.0"
+source_language = "JavaScript"
+target_language = "Rust"
+rust_edition = "2021"
+msrv = "1.75.0"
+kickoff_hash = "d431b29d97b6f73e69d547109cf5081578fac931e72afe95639ebe766c1b2a20"
+unsafe_count = 0
+commonmark_pass_rate = ""
+marked_suite_pass_rate = ""
+fuzz_duration_seconds = 60
+fuzz_divergences = 0
+bonus_zero_unsafe = true
+bonus_differential_fuzz = true
+bonus_decision_log = true
+bonus_bug_catcher = false

@@ -1,0 +1,16 @@
+{
+  "marked_rs": {
+    "small_10kb_mb_per_s": null,
+    "medium_100kb_mb_per_s": null,
+    "large_1mb_mb_per_s": null,
+    "startup_ms": null,
+    "max_rss_kb": null
+  },
+  "node_marked": {
+    "small_10kb_mb_per_s": null,
+    "medium_100kb_mb_per_s": null,
+    "large_1mb_mb_per_s": null,
+    "startup_ms": null
+  },
+  "note": "Run `make bench`, `make bench-startup`, and `make bench-memory` to fill values"
+}

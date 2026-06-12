@@ -1,0 +1,13 @@
+[package]
+name = "marked-rs-fuzz"
+version = "0.0.1"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "fuzz_markdown"
+path = "fuzz_targets/fuzz_markdown.rs"
+
+[dependencies]
+libfuzzer-sys = "0.4"
+marked-rs = { path = ".." }

@@ -1,0 +1,7 @@
+{
+  "name": "marked-rs-dev",
+  "private": true,
+  "dependencies": {
+    "marked": "^13.0.0"
+  }
+}

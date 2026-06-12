@@ -1,0 +1,5 @@
+/target/
+/node_modules/
+/test_output.txt
+/bench/criterion_output.txt
+/package-lock.json
