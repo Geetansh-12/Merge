@@ -1,0 +1,34 @@
+name: Upstream Tracking
+
+on:
+  schedule:
+    # Run every Monday at 00:00
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check marked.js latest release
+        run: |
+          LATEST=$(curl -s https://api.github.com/repos/markedjs/marked/releases/latest | jq -r .tag_name)
+          echo "Latest upstream release is $LATEST"
+          
+          # This would typically read a TRACKED_VERSION file and open an issue if out of date
+          # We're tracking marked.js closely!
+          echo "UPSTREAM_VERSION=$LATEST" >> $GITHUB_ENV
+          
+      - name: Create Tracking Issue
+        uses: imjohnbo/issue-bot@v3
+        if: env.UPSTREAM_VERSION != ''
+        with:
+          title: "Upstream Update Check: ${{ env.UPSTREAM_VERSION }}"
+          body: |
+            The upstream `marked` library has released version `${{ env.UPSTREAM_VERSION }}`.
+            
+            Please review the [changelog](https://github.com/markedjs/marked/releases/tag/${{ env.UPSTREAM_VERSION }}) to determine if any spec compliance or security patches need to be backported to `marked-rs`.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

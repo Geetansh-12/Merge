@@ -2,6 +2,7 @@
   "name": "marked-rs-dev",
   "private": true,
   "dependencies": {
-    "marked": "^13.0.0"
+    "marked": "^13.0.0",
+    "openpgp": "^6.3.1"
   }
 }

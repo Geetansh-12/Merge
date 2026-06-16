@@ -26,10 +26,12 @@ impl Default for Options {
 }
 
 impl Options {
+    /// Creates a default Options struct.
     pub fn new() -> Self {
         Self::default()
     }
 
+    /// Creates an Options struct with GFM disabled (strict CommonMark mode).
     pub fn without_gfm() -> Self {
         Self {
             gfm: false,

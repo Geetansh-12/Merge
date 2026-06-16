@@ -12,12 +12,13 @@ const PLACEHOLDER_BASE: u32 = 0xe100;
 /// Inline parser with delimiter stack emphasis matching.
 pub struct InlineParser<'a> {
     src: &'a str,
+    pos: usize,
     options: &'a Options,
     link_defs: &'a HashMap<String, (String, Option<String>)>,
-    pos: usize,
 }
 
 impl<'a> InlineParser<'a> {
+    /// Creates a new InlineParser for the given source string.
     pub fn new(
         src: &'a str,
         options: &'a Options,
@@ -25,12 +26,13 @@ impl<'a> InlineParser<'a> {
     ) -> Self {
         Self {
             src,
+            pos: 0,
             options,
             link_defs,
-            pos: 0,
         }
     }
 
+    /// Parses the entire string into a vector of inline tokens.
     pub fn parse<'b>(
         src: &'b str,
         options: &'b Options,
@@ -168,6 +170,9 @@ impl<'a> InlineParser<'a> {
         while i < bytes.len() {
             let ch = self.src[i..].chars().next()?;
             let len = ch.len_utf8();
+            if i - start >= 999 {
+                return None;
+            }
             if ch == '[' {
                 depth += 1;
                 if depth > MAX_BRACKET_DEPTH {
@@ -647,6 +652,7 @@ enum EmphResult {
     Strong(Vec<EmphResult>),
 }
 
+/// Utility parser used primarily by tests to parse emphasis in a vacuum.
 pub fn parse_emphasis_only(src: &str) -> Vec<InlineToken> {
     let results = parse_emphasis_delimiters_str(src);
     results

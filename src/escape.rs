@@ -35,6 +35,13 @@ pub fn encode_href(url: &str) -> String {
     out
 }
 
+/// Percent-encode an email address for use in a mailto: href attribute.
+pub fn encode_email(email: &str) -> String {
+    let mailto = format!("mailto:{}", email);
+    encode_href(&mailto)
+}
+
+/// Decodes HTML entities in the given text, returning a new String.
 pub fn decode_entities(text: &str) -> String {
     let mut out = String::with_capacity(text.len());
     let mut rest = text;

@@ -2,16 +2,21 @@ use crate::escape::{decode_entities, encode_href, escape_html};
 use crate::options::Options;
 use crate::token::{Alignment, InlineToken, ListItem, Token};
 
+/// Trait for rendering a stream of parsed markdown Tokens.
 pub trait Renderer {
+    /// Renders a list of block-level tokens.
     fn render_tokens(&mut self, tokens: &[Token]) -> String;
+    /// Renders a list of inline-level tokens.
     fn render_inline(&mut self, tokens: &[InlineToken]) -> String;
 }
 
+/// A renderer that outputs HTML according to the CommonMark specification.
 pub struct HtmlRenderer {
     options: Options,
 }
 
 impl HtmlRenderer {
+    /// Creates a new HTML renderer with the given options.
     pub fn new(options: Options) -> Self {
         Self { options }
     }
@@ -101,8 +106,8 @@ impl HtmlRenderer {
             }
             out.push('>');
             if item.task {
-                let checked = if item.checked { " checked=\"\"" } else { "" };
-                out.push_str(&format!("<input type=\"checkbox\" disabled=\"\"{checked}>"));
+                let checked_attr = if item.checked { "checked=\"\" " } else { "" };
+                out.push_str(&format!("<input {checked_attr}disabled=\"\" type=\"checkbox\"> "));
             }
             let all_space = item.tokens.iter().all(|t| matches!(t, Token::Space));
             if all_space {
@@ -241,9 +246,9 @@ impl HtmlRenderer {
             }
             InlineToken::Autolink { href, text, is_email } => {
                 let href_esc = if *is_email {
-                    format!("mailto:{text}")
+                    crate::escape::encode_email(text)
                 } else {
-                    encode_href(href)
+                    crate::escape::encode_href(href)
                 };
                 format!(
                     "<a href=\"{}\">{}</a>",

@@ -3,6 +3,7 @@ use crate::token::{Alignment, ListItem, TableCell, Token};
 use regex::Regex;
 use std::sync::OnceLock;
 
+/// Block-level tokenizer (lexer) for CommonMark.
 pub struct Lexer<'a> {
     options: &'a Options,
     lines: Vec<String>,
@@ -10,6 +11,7 @@ pub struct Lexer<'a> {
 }
 
 impl<'a> Lexer<'a> {
+    /// Creates a new Lexer for the given source and options.
     pub fn new(src: &'a str, options: &'a Options) -> Self {
         let normalized_src = src.replace("\r\n", "\n").replace('\r', "\n");
         let lines: Vec<String> = normalized_src.split('\n').map(|s| s.to_string()).collect();
@@ -20,6 +22,7 @@ impl<'a> Lexer<'a> {
         }
     }
 
+    /// Tokenizes the source string into a vector of block tokens.
     pub fn tokenize(mut self) -> Vec<Token> {
         let mut tokens = Vec::new();
         while self.line_idx < self.lines.len() {
@@ -728,12 +731,12 @@ fn html_block_type7_regex() -> &'static Regex {
     static RE: OnceLock<Regex> = OnceLock::new();
     RE.get_or_init(|| Regex::new(
         r"^(?:<[a-zA-Z][a-zA-Z0-9-]*(?:\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\s*=\s*(?:[^ \x22'=<>`]+|'[^']*'|\x22[^\x22]*\x22))?)*\s*/?>|</[a-zA-Z][a-zA-Z0-9-]*\s*>)[ \t]*$"
-    ).unwrap())
+    ).expect("valid html_block_type7_regex"))
 }
 
 fn table_divider_regex() -> &'static Regex {
     static RE: OnceLock<Regex> = OnceLock::new();
-    RE.get_or_init(|| Regex::new(r"^\|?(\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$").unwrap())
+    RE.get_or_init(|| Regex::new(r"^\|?(\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$").expect("valid table_divider_regex"))
 }
 
 fn strip_blockquote_prefix(line: &str) -> Option<&str> {
@@ -1075,6 +1078,9 @@ fn strip_atx_closing_hashes(raw: &str) -> &str {
 fn find_link_label_end(s: &str) -> Option<usize> {
     let mut escaped = false;
     for (idx, ch) in s.char_indices().skip(1) {
+        if idx > 999 {
+            return None;
+        }
         if escaped {
             escaped = false;
             continue;

@@ -50,6 +50,30 @@ fn commonmark_spec_compliance() {
 
     println!("\nCommonMark spec: {}/{} ({:.1}%)", passed, total, pass_rate);
 
+    let mut by_section: std::collections::HashMap<String, (u32, u32)> = std::collections::HashMap::new();
+    for t in &tests {
+        let expected_norm = normalize_html(&t.html);
+        let got = marked_rs::parse(&t.markdown);
+        let got_norm = normalize_html(&got);
+        
+        let entry = by_section.entry(t.section.clone()).or_insert((0, 0));
+        entry.1 += 1;
+        if expected_norm == got_norm {
+            entry.0 += 1;
+        }
+    }
+
+    println!("\n## Section Compliance Table");
+    println!("| Section | Passing | Total | Compliance |");
+    println!("|---------|---------|-------|------------|");
+    let mut sections: Vec<_> = by_section.into_iter().collect();
+    sections.sort_by(|a, b| a.0.cmp(&b.0));
+    for (sec, (pass, tot)) in sections {
+        let pct = (pass as f64 / tot as f64) * 100.0;
+        println!("| {} | {} | {} | {:.1}% |", sec, pass, tot, pct);
+    }
+    println!();
+
     if !section_failures.is_empty() {
         println!("\nFailures by section:");
         let mut sections: Vec<_> = section_failures.iter().collect();

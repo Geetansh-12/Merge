@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>marked-rs WASM Demo</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; display: flex; height: 100vh; margin: 0; background: #1e1e1e; color: #fff; }
+        textarea { flex: 1; padding: 20px; font-family: monospace; background: #2d2d2d; color: #d4d4d4; border: none; outline: none; resize: none; font-size: 16px; }
+        #preview { flex: 1; padding: 20px; overflow-y: auto; background: #1e1e1e; }
+        h1, h2, h3 { color: #569cd6; }
+        code { background: #3c3c3c; padding: 2px 4px; border-radius: 4px; }
+        pre { background: #000; padding: 10px; border-radius: 8px; overflow-x: auto; }
+        a { color: #4fc1ff; }
+    </style>
+</head>
+<body>
+    <textarea id="editor" spellcheck="false"># marked-rs
+
+Welcome to the **marked-rs** WASM demo!
+Try typing some Markdown here.
+
+- Blazing fast
+- Zero unsafe
+- CommonMark compliant
+
+```rust
+println!("Hello WASM!");
+```
+</textarea>
+    <div id="preview"></div>
+
+    <script type="module">
+        import init, { parse } from './pkg/marked_rs.js';
+
+        async function run() {
+            await init();
+            
+            const editor = document.getElementById('editor');
+            const preview = document.getElementById('preview');
+
+            function update() {
+                const start = performance.now();
+                preview.innerHTML = parse(editor.value);
+                const end = performance.now();
+                console.log(`Parsed in ${(end - start).toFixed(2)}ms`);
+            }
+
+            editor.addEventListener('input', update);
+            update(); // Initial render
+        }
+
+        run();
+    </script>
+</body>
+</html>

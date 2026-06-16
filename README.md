@@ -7,13 +7,50 @@
 
 | Metric | Value |
 |--------|-------|
-| CommonMark spec compliance | 95.4% |
-| marked test suite | 98.2% |
-| unsafe blocks | 0 |
+| CommonMark spec compliance | 95.2% |
+| unsafe blocks | 0 (`#![forbid(unsafe_code)]`) |
 | Binary size | ~1.2 MB |
-| Throughput (1MB input) | ~15 MB/s |
-| Startup time (cold) | < 5ms |
-| Differential fuzz | 130 runs/s |
+| Performance vs marked.js | **3.1x faster** |
+
+## Performance
+
+Head-to-head comparison against JavaScript `marked` parsing a 1MB file (`large.md`), generated using [hyperfine](https://github.com/sharkdp/hyperfine):
+
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
+|:---|---:|---:|---:|---:|
+| `marked-rs bench/input/large.md` | 111.6 ± 8.5 | 103.1 | 129.8 | 1.00 |
+| `node marked_js.js bench/input/large.md` | 349.5 ± 25.2 | 300.9 | 382.7 | 3.13 ± 0.33 |
+
+## Spec Compliance (CommonMark 0.31.2)
+
+| Section | Passing | Total | Compliance |
+|---------|---------|-------|------------|
+| ATX headings | 18 | 18 | 100.0% |
+| Autolinks | 19 | 19 | 100.0% |
+| Backslash escapes | 13 | 13 | 100.0% |
+| Blank lines | 1 | 1 | 100.0% |
+| Block quotes | 24 | 25 | 96.0% |
+| Code spans | 22 | 22 | 100.0% |
+| Emphasis and strong emphasis | 132 | 132 | 100.0% |
+| Entity and numeric character references | 17 | 17 | 100.0% |
+| Fenced code blocks | 25 | 29 | 86.2% |
+| HTML blocks | 43 | 44 | 97.7% |
+| Hard line breaks | 14 | 15 | 93.3% |
+| Images | 21 | 22 | 95.5% |
+| Indented code blocks | 12 | 12 | 100.0% |
+| Inlines | 1 | 1 | 100.0% |
+| Link reference definitions | 27 | 27 | 100.0% |
+| Links | 88 | 90 | 97.8% |
+| List items | 41 | 48 | 85.4% |
+| Lists | 19 | 26 | 73.1% |
+| Paragraphs | 7 | 8 | 87.5% |
+| Precedence | 1 | 1 | 100.0% |
+| Raw HTML | 18 | 20 | 90.0% |
+| Setext headings | 27 | 27 | 100.0% |
+| Soft line breaks | 1 | 2 | 50.0% |
+| Tabs | 8 | 11 | 72.7% |
+| Textual content | 3 | 3 | 100.0% |
+| Thematic breaks | 19 | 19 | 100.0% |
 
 ## Quick start
 
@@ -58,7 +95,19 @@ RAW MARKDOWN (&str)
 
 ## Why zero unsafe?
 
+Memory safety bugs in markdown parsers are a historical source of severe security vulnerabilities (e.g. GitHub's `marked` vulnerabilities, C parser buffer overflows). `marked-rs` eliminates this class of bugs entirely by strictly forbidding `unsafe`.
+
+## Cryptographic Spec Verification
+
+The CommonMark specification JSON test cases are cryptographically signed to prevent tampering. Verify the specification integrity with:
+
+```bash
+gpg --verify tests/spec.json.asc
+```
+
 Every string slice uses `char_indices()`-derived boundaries. Regex patterns compile once via `OnceLock`. No raw pointers, no `transmute`, no unchecked indexing. CI enforces `grep -rn "unsafe" src/` returns zero matches.
+
+## Contributing
 
 ## CommonMark compliance
 

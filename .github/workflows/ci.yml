@@ -38,8 +38,23 @@ jobs:
       - name: Zero unsafe check
         run: |
           COUNT=$(grep -rn "unsafe" src/ | grep -v "//.*unsafe" | wc -l)
-          echo "unsafe blocks: $COUNT"
-          test $COUNT -eq 0
+          if [ "$COUNT" -ne 0 ]; then
+            echo "Found unsafe blocks!"
+            exit 1
+          fi
+
+      - name: Check README compliance matches test
+        run: |
+          COMPLIANCE=$(cargo test --test commonmark -- --nocapture | grep "CommonMark spec:" | sed -n 's/.*(\(.*\)%)/\1/p')
+          README_COMPLIANCE=$(grep "CommonMark spec compliance" README.md | sed -n 's/.*| \(.*\)% |/\1/p')
+          if [ "$COMPLIANCE" != "$README_COMPLIANCE" ]; then
+            echo "Compliance mismatch! README says $README_COMPLIANCE% but test says $COMPLIANCE%"
+            exit 1
+          fi
+
+      - name: Dogfood README
+        run: |
+          cat README.md | cargo run --release > /dev/null
 
       - name: Binary size
         run: ls -lh target/release/marked-rs
