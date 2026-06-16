@@ -70,18 +70,18 @@ impl HtmlRenderer {
             Token::List { ordered, start, loose, items } => {
                 self.render_list(*ordered, *start, *loose, items)
             }
-            Token::CodeBlock { lang, text } => {
-                if let Some(l) = lang {
-                    if !l.is_empty() {
-                        return format!(
-                            "<pre><code class=\"language-{}\">{}</code></pre>\n",
-                            escape_html(&decode_entities(l)),
-                            escape_html(text)
-                        );
-                    }
+        Token::CodeBlock { lang, text } => {
+            if let Some(l) = lang {
+                if !l.is_empty() {
+                    return format!(
+                        "<pre><code class=\"language-{}\">{}</code></pre>\n",
+                        escape_html(&decode_entities(l)),
+                        escape_html(text)
+                    );
                 }
-                format!("<pre><code>{}</code></pre>\n", escape_html(text))
             }
+            format!("<pre><code>{}</code></pre>\n", escape_html(text))
+        }
             Token::Table { align, header, rows } => self.render_table(align, header, rows),
             Token::HtmlBlock { text } => text.clone(), // clone needed because HtmlBlock owns String
 
@@ -135,19 +135,22 @@ impl HtmlRenderer {
                     out.push_str(&self.render_inline(inline));
                 }
                 Token::CodeBlock { text, .. } => {
-                    if out.is_empty() {
+                    if !out.ends_with('\n') {
                         out.push('\n');
                     }
                     out.push_str(&format!("<pre><code>{}</code></pre>\n", escape_html(text)));
                 }
                 Token::Blockquote { tokens: inner, .. } => {
-                    if out.is_empty() {
+                    if !out.ends_with('\n') {
                         out.push('\n');
                     }
                     out.push_str(&format!("<blockquote>\n{}</blockquote>\n", self.render_tokens(inner)));
                 }
+                Token::Space => {
+                    // Ignore space tokens in tight lists
+                }
                 other => {
-                    if out.is_empty() {
+                    if !out.ends_with('\n') {
                         out.push('\n');
                     }
                     out.push_str(&self.render_block(other));

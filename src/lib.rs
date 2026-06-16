@@ -31,7 +31,7 @@ use crate::inline::InlineParser;
 use crate::lexer::Lexer;
 use crate::options::Options;
 use crate::renderer::{HtmlRenderer, Renderer};
-use crate::token::{ListItem, Token};
+use crate::token::Token;
 use std::collections::HashMap;
 
 #[cfg(target_arch = "wasm32")]

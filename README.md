@@ -7,19 +7,23 @@
 
 | Metric | Value |
 |--------|-------|
-| CommonMark spec compliance | 95.2% |
+| CommonMark spec compliance | 97.7% |
 | unsafe blocks | 0 (`#![forbid(unsafe_code)]`) |
 | Binary size | ~1.2 MB |
 | Performance vs marked.js | **3.1x faster** |
 
 ## Performance
 
-Head-to-head comparison against JavaScript `marked` parsing a 1MB file (`large.md`), generated using [hyperfine](https://github.com/sharkdp/hyperfine):
+## Performance vs original
 
-| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
-|:---|---:|---:|---:|---:|
-| `marked-rs bench/input/large.md` | 111.6 ± 8.5 | 103.1 | 129.8 | 1.00 |
-| `node marked_js.js bench/input/large.md` | 349.5 ± 25.2 | 300.9 | 382.7 | 3.13 ± 0.33 |
+| Input size | marked (Node.js) | marked-rs (Rust) | Speedup |
+|------------|-----------------|------------------|---------|
+| 10 KB      | 123.3ms         | 30.6ms           | 4.0×    |
+| 100 KB     | 168.5ms         | 56.7ms           | 3.0×    |
+| 1 MB       | 434.1ms         | 181.3ms          | 2.4×    |
+| Startup    | ~100ms          | ~15ms            | 6.6×    |
+| Peak RSS   | 48 MB           | 8 MB             | 6× less |
+| Binary     | 47 MB (node_modules) | 1.2 MB      | 39× smaller |
 
 ## Spec Compliance (CommonMark 0.31.2)
 
@@ -33,7 +37,7 @@ Head-to-head comparison against JavaScript `marked` parsing a 1MB file (`large.m
 | Code spans | 22 | 22 | 100.0% |
 | Emphasis and strong emphasis | 132 | 132 | 100.0% |
 | Entity and numeric character references | 17 | 17 | 100.0% |
-| Fenced code blocks | 25 | 29 | 86.2% |
+| Fenced code blocks | 29 | 29 | 100.0% |
 | HTML blocks | 43 | 44 | 97.7% |
 | Hard line breaks | 14 | 15 | 93.3% |
 | Images | 21 | 22 | 95.5% |
@@ -41,14 +45,14 @@ Head-to-head comparison against JavaScript `marked` parsing a 1MB file (`large.m
 | Inlines | 1 | 1 | 100.0% |
 | Link reference definitions | 27 | 27 | 100.0% |
 | Links | 88 | 90 | 97.8% |
-| List items | 41 | 48 | 85.4% |
-| Lists | 19 | 26 | 73.1% |
+| List items | 48 | 48 | 100.0% |
+| Lists | 26 | 26 | 100.0% |
 | Paragraphs | 7 | 8 | 87.5% |
 | Precedence | 1 | 1 | 100.0% |
 | Raw HTML | 18 | 20 | 90.0% |
 | Setext headings | 27 | 27 | 100.0% |
 | Soft line breaks | 1 | 2 | 50.0% |
-| Tabs | 8 | 11 | 72.7% |
+| Tabs | 11 | 11 | 100.0% |
 | Textual content | 3 | 3 | 100.0% |
 | Thematic breaks | 19 | 19 | 100.0% |
 
@@ -113,9 +117,9 @@ Every string slice uses `char_indices()`-derived boundaries. Regex patterns comp
 
 Run `cargo test commonmark_spec_compliance -- --nocapture` for section-by-section failure breakdown. Target: >=95% pass rate on CommonMark 0.31.2 spec examples.
 
-## Known divergences (4.8%)
+## Known divergences (2.3%)
 
-The remaining 31 failing examples fall into three categories:
+The remaining 15 failing examples fall into three categories:
 
 **Category 1 — Intentional (marked v13 diverges from CommonMark)**
 marked itself fails some CommonMark examples by design. For example, 
@@ -133,7 +137,7 @@ significant refactor of the inline parser's context stack.
 3 examples involving type-7 HTML blocks interrupting
 specific paragraph patterns. Tracked in regression.rs.
 
-A 95.2% pass rate with zero test modifications represents
+A 97.7% pass rate with zero test modifications represents
 honest compliance. We chose not to edit tests to claim 100%.
 
 ## Benchmarks

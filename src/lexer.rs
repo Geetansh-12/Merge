@@ -247,8 +247,8 @@ impl<'a> Lexer<'a> {
                 break;
             }
             if let Some(stripped) = strip_blockquote_prefix(l) {
-                bq_lines.push(stripped.to_string());
-                allow_lazy_continuation = blockquote_line_allows_lazy_continuation(stripped);
+                bq_lines.push(stripped.clone());
+                allow_lazy_continuation = blockquote_line_allows_lazy_continuation(&stripped);
                 self.line_idx += 1;
             } else {
                 if allow_lazy_continuation
@@ -294,6 +294,11 @@ impl<'a> Lexer<'a> {
                 if next_idx < self.lines.len() {
                     let next = &self.lines[next_idx];
                     if parse_list_marker(next).is_some() || is_list_continuation(next, marker_len) {
+                        if let Some(last) = items.last() {
+                            if last.tokens.is_empty() && parse_list_marker(next).is_none() {
+                                break;
+                            }
+                        }
                         any_loose = true;
                         self.line_idx += 1;
                         continue;
@@ -360,12 +365,17 @@ impl<'a> Lexer<'a> {
         if self.line_idx < self.lines.len() {
             let l = &self.lines[self.line_idx];
             let content = strip_indent_columns(l, marker_len);
-            lines.push(content);
+            if !content.trim().is_empty() {
+                lines.push(content);
+            }
             self.line_idx += 1;
         }
         while self.line_idx < self.lines.len() {
             let l = &self.lines[self.line_idx];
             if l.trim().is_empty() {
+                if lines.is_empty() {
+                    break;
+                }
                 let mut next_idx = self.line_idx + 1;
                 while next_idx < self.lines.len() && self.lines[next_idx].trim().is_empty() {
                     next_idx += 1;
@@ -739,19 +749,52 @@ fn table_divider_regex() -> &'static Regex {
     RE.get_or_init(|| Regex::new(r"^\|?(\s*:?-+:?\s*\|)+\s*:?-+:?\s*\|?\s*$").expect("valid table_divider_regex"))
 }
 
-fn strip_blockquote_prefix(line: &str) -> Option<&str> {
-    if leading_indent_columns(line) > 3 {
+fn strip_blockquote_prefix(line: &str) -> Option<String> {
+    let lead_cols = leading_indent_columns(line);
+    if lead_cols > 3 {
         return None;
     }
     let trimmed = line.trim_start();
     if !trimmed.starts_with('>') {
         return None;
     }
-    let after = trimmed[1..]
-        .strip_prefix(' ')
-        .or_else(|| trimmed[1..].strip_prefix('\t'))
-        .unwrap_or(&trimmed[1..]);
-    Some(after)
+    let after_gt = &trimmed[1..];
+    
+    let col_after_gt = lead_cols + 1;
+    let mut expanded = String::new();
+    let mut col = col_after_gt;
+    let chars = after_gt.char_indices();
+    let mut rest_idx = after_gt.len();
+    
+    for (idx, ch) in chars {
+        if ch == ' ' {
+            expanded.push(' ');
+            col += 1;
+        } else if ch == '\t' {
+            let tab_stop = col + 4 - (col % 4);
+            let spaces = tab_stop - col;
+            for _ in 0..spaces {
+                expanded.push(' ');
+            }
+            col = tab_stop;
+        } else {
+            rest_idx = idx;
+            break;
+        }
+    }
+    
+    let remaining_spaces = if expanded.is_empty() {
+        0
+    } else {
+        expanded.len() - 1
+    };
+    
+    let mut out = String::new();
+    for _ in 0..remaining_spaces {
+        out.push(' ');
+    }
+    out.push_str(&after_gt[rest_idx..]);
+    Some(out)
 }
 
 fn protect_lazy_continuation_marker(line: &str) -> String {
@@ -800,10 +843,23 @@ fn parse_list_marker(line: &str) -> Option<(bool, usize, u64)> {
 
     if let Some(_marker @ ('-' | '*' | '+')) = chars.next() {
         let after = &trimmed[1..];
-        if after.is_empty() {
+        if after.trim().is_empty() {
             return Some((false, indent + 2, 1));
         }
-        let spaces: usize = after.chars().take_while(|&c| c == ' ').count();
+        
+        let start_col = indent + 1;
+        let mut col = start_col;
+        for ch in after.chars() {
+            if ch == ' ' {
+                col += 1;
+            } else if ch == '\t' {
+                col += 4 - (col % 4);
+            } else {
+                break;
+            }
+        }
+        let spaces = col - start_col;
+        
         if spaces > 0 {
             let marker_len = if spaces >= 5 {
                 indent + 2
@@ -836,10 +892,23 @@ fn parse_list_marker(line: &str) -> Option<(bool, usize, u64)> {
             if let Some(_m) = marker_char {
                 let after = &trimmed[num_str.len() + 1..];
                 let num = num_str.parse::<u64>().unwrap_or(1);
-                if after.is_empty() {
+                if after.trim().is_empty() {
                     return Some((true, indent + num_str.len() + 2, num));
                 }
-                let spaces: usize = after.chars().take_while(|&c| c == ' ').count();
+                
+                let start_col = indent + num_str.len() + 1;
+                let mut col = start_col;
+                for ch in after.chars() {
+                    if ch == ' ' {
+                        col += 1;
+                    } else if ch == '\t' {
+                        col += 4 - (col % 4);
+                    } else {
+                        break;
+                    }
+                }
+                let spaces = col - start_col;
+                
                 if spaces > 0 {
                     let marker_len = if spaces >= 5 {
                         indent + num_str.len() + 2
@@ -1043,13 +1112,44 @@ fn expand_leading_tabs(line: &str) -> String {
 }
 
 fn strip_indent_columns(line: &str, columns: usize) -> String {
-    let expanded = expand_leading_tabs(line);
-    for (col, (idx, _ch)) in expanded.char_indices().enumerate() {
-        if col >= columns {
-            return expanded[idx..].to_string();
+    let mut col = 0;
+    let chars = line.char_indices();
+    let mut rest_idx = line.len();
+    let mut expanded_spaces = 0;
+
+    for (idx, ch) in chars {
+        if col >= columns && ch != ' ' && ch != '\t' {
+            rest_idx = idx;
+            break;
         }
+        
+        let char_cols = if ch == '\t' {
+            (col + 4 - (col % 4)) - col
+        } else {
+            1
+        };
+
+        if col + char_cols > columns {
+            let keep_spaces = if col < columns {
+                (col + char_cols) - columns
+            } else {
+                char_cols
+            };
+            expanded_spaces += keep_spaces;
+        }
+        col += char_cols;
     }
-    String::new()
+
+    if col < columns {
+        return String::new();
+    }
+
+    let mut out = String::new();
+    for _ in 0..expanded_spaces {
+        out.push(' ');
+    }
+    out.push_str(&line[rest_idx..]);
+    out
 }
 
 fn strip_up_to_n_spaces(line: &str, n: usize) -> &str {

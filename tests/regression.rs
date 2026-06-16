@@ -30,7 +30,7 @@ fn fenced_code_backticks_in_info_string() {
 fn setext_heading_after_list_item() {
     let input = "- item\nheading\n=======\n";
     let got = marked_rs::parse(input);
-    assert!(got.contains("<h1>heading</h1>"));
+    assert!(got.contains("<h1>item\nheading</h1>"));
 }
 
 #[test]

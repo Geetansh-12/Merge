@@ -45,16 +45,22 @@ impl<'a> InlineParser<'a> {
     fn parse_all(&mut self) -> Vec<InlineToken> {
         let mut tokens = Vec::new();
         while self.pos < self.src.len() {
-            if let Some(tok) = self.try_parse_special() {
+            if let Some(tok) = self.try_parse_special(&mut tokens) {
                 tokens.push(tok);
             } else {
                 self.parse_text_run(&mut tokens);
             }
         }
+        if let Some(InlineToken::Text(text)) = tokens.last_mut() {
+            let trimmed = text.trim_end_matches(' ');
+            if trimmed.len() != text.len() {
+                *text = trimmed.to_string();
+            }
+        }
         self.process_emphasis(tokens)
     }
 
-    fn try_parse_special(&mut self) -> Option<InlineToken> {
+    fn try_parse_special(&mut self, tokens: &mut [InlineToken]) -> Option<InlineToken> {
         let rest = &self.src[self.pos..];
         if rest.starts_with('\\') {
             return self.parse_escape();
@@ -77,7 +83,7 @@ impl<'a> InlineParser<'a> {
             return self.parse_strikethrough();
         }
         if rest.starts_with('\n') {
-            return self.parse_line_break();
+            return self.parse_line_break(tokens);
         }
         None
     }
@@ -149,18 +155,17 @@ impl<'a> InlineParser<'a> {
         let is_image = self.src[self.pos..].starts_with("![");
         let label_start = self.pos + if is_image { 2 } else { 1 };
         let (label_text, label_end) = self.find_balanced_brackets(label_start)?;
-        let parsed_label = Self::parse(&label_text, self.options, self.link_defs);
         let after = &self.src[label_end..];
         if after.starts_with('(') {
-            if let Some(tok) = self.parse_inline_link(is_image, parsed_label.clone(), label_end) {
+            if let Some(tok) = self.parse_inline_link(is_image, &label_text, label_end) {
                 return Some(tok);
             }
-            return self.parse_shortcut_ref(is_image, &label_text, parsed_label, label_end);
+            return self.parse_shortcut_ref(is_image, &label_text, label_end);
         }
         if after.starts_with('[') {
-            return self.parse_ref_link(is_image, &label_text, parsed_label, label_end);
+            return self.parse_ref_link(is_image, &label_text, label_end);
         }
-        self.parse_shortcut_ref(is_image, &label_text, parsed_label, label_end)
+        self.parse_shortcut_ref(is_image, &label_text, label_end)
     }
 
     fn find_balanced_brackets(&self, start: usize) -> Option<(String, usize)> {
@@ -211,8 +216,9 @@ impl<'a> InlineParser<'a> {
         None
     }
 
-    fn parse_inline_link(&mut self, is_image: bool, parsed_label: Vec<InlineToken>, label_end: usize) -> Option<InlineToken> {
+    fn parse_inline_link(&mut self, is_image: bool, label_text: &str, label_end: usize) -> Option<InlineToken> {
         let (href, title, end) = self.parse_link_destination(label_end)?;
+        let parsed_label = Self::parse(label_text, self.options, self.link_defs);
         if is_image {
             self.pos = end;
             return Some(InlineToken::Image {
@@ -236,11 +242,11 @@ impl<'a> InlineParser<'a> {
         &mut self,
         is_image: bool,
         label_text: &str,
-        parsed_label: Vec<InlineToken>,
         label_end: usize,
     ) -> Option<InlineToken> {
         let ref_label = normalize_label(label_text);
         if let Some((href, title)) = self.link_defs.get(&ref_label) {
+            let parsed_label = Self::parse(label_text, self.options, self.link_defs);
             if is_image {
                 self.pos = label_end;
                 return Some(InlineToken::Image {
@@ -254,15 +260,15 @@ impl<'a> InlineParser<'a> {
             }
             self.pos = label_end;
             return Some(InlineToken::Link {
-                href: href.clone(), // clone needed because HashMap returns ref
-                title: title.clone(), // clone needed because HashMap returns ref
+                href: href.clone(),
+                title: title.clone(),
                 tokens: parsed_label,
             });
         }
         None
     }
 
-    fn parse_ref_link(&mut self, is_image: bool, label_text: &str, parsed_label: Vec<InlineToken>, label_end: usize) -> Option<InlineToken> {
+    fn parse_ref_link(&mut self, is_image: bool, label_text: &str, label_end: usize) -> Option<InlineToken> {
         let mut i = label_end;
         if i >= self.src.len() || self.src.as_bytes()[i] != b'[' {
             return None;
@@ -295,6 +301,7 @@ impl<'a> InlineParser<'a> {
         };
         // collapsed reference link [text][]
         if let Some((href, title)) = self.link_defs.get(&ref_label) {
+            let parsed_label = Self::parse(label_text, self.options, self.link_defs);
             if is_image {
                 self.pos = i + 1;
                 return Some(InlineToken::Image {
@@ -549,7 +556,13 @@ fn inline_html_regex() -> &'static Regex {
         None
     }
 
-    fn parse_line_break(&mut self) -> Option<InlineToken> {
+    fn parse_line_break(&mut self, tokens: &mut [InlineToken]) -> Option<InlineToken> {
+        if let Some(InlineToken::Text(text)) = tokens.last_mut() {
+            let trimmed = text.trim_end_matches(' ');
+            if trimmed.len() != text.len() {
+                *text = trimmed.to_string();
+            }
+        }
         if self.options.breaks {
             self.pos += 1;
             return Some(InlineToken::HardBreak);

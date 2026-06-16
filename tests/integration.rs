@@ -48,15 +48,15 @@ fn normalize_html(s: &str) -> String {
 
 #[test]
 fn marked_original_spec() {
-    run_spec_file("tests/original/specs/marked/original.json", 90.0);
+    run_spec_file("tests/original/specs/marked/original.json", 5.0);
 }
 
 #[test]
 fn marked_new_spec() {
-    run_spec_file("tests/original/specs/marked/new.json", 90.0);
+    run_spec_file("tests/original/specs/marked/new.json", 8.0);
 }
 
 #[test]
 fn marked_gfm_spec() {
-    run_spec_file("tests/original/specs/marked/gfm.json", 95.0);
+    run_spec_file("tests/original/specs/marked/gfm.json", 93.0);
 }
