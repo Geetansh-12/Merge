@@ -15,3 +15,4 @@ bonus_zero_unsafe = true
 bonus_differential_fuzz = true
 bonus_decision_log = true
 bonus_bug_catcher = true
+bug_report_url = "https://github.com/markedjs/marked/issues/3996"

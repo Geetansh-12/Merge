@@ -11,6 +11,7 @@
 | unsafe blocks | 0 (`#![forbid(unsafe_code)]`) |
 | Binary size | ~1.2 MB |
 | Performance vs marked.js | **2.4x - 6.6x faster** |
+| Upstream bug filed | [markedjs/marked#3996](https://github.com/markedjs/marked/issues/3996) |
 
 ## Performance
 
