@@ -45,12 +45,18 @@ jobs:
 
       - name: Check README compliance matches test
         run: |
-          COMPLIANCE=$(cargo test --test commonmark -- --nocapture | grep "CommonMark spec:" | sed -n 's/.*(\(.*\)%)/\1/p')
+          OUTPUT=$(cargo test --test commonmark -- --nocapture)
+          echo "$OUTPUT"
+          COMPLIANCE=$(echo "$OUTPUT" | grep "CommonMark spec:" | sed -n 's/.*(\(.*\)%)/\1/p')
           README_COMPLIANCE=$(grep "CommonMark spec compliance" README.md | sed -n 's/.*| \(.*\)% |/\1/p')
           if [ "$COMPLIANCE" != "$README_COMPLIANCE" ]; then
             echo "Compliance mismatch! README says $README_COMPLIANCE% but test says $COMPLIANCE%"
             exit 1
           fi
+          echo "### Spec Compliance: $COMPLIANCE%" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          # Extract the table from output and append to summary
+          echo "$OUTPUT" | awk '/## Section Compliance Table/{flag=1; print; next} /Failures by section:/{flag=0} flag' >> $GITHUB_STEP_SUMMARY
 
       - name: Dogfood README
         run: |

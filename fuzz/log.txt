@@ -1,0 +1,354 @@
+Running differential fuzz for 300s...
+Started: Wed Jun 10 01:07:28 IST 2026
+
+=== DIVERGENCE #1 (run 5) ===
+INPUT: cn#e*rr_d\e#`>!\_n>!#a__)!-#[*_d-ennea\]`nnnd_neea-ec-d(d)\n[!#c_[*`_![*[`c\*_(!][d`\rd-![b_d`d* _cc#\ac](![##c[bbc*_b)>r`a-ec)c_#>``(n--\cab>a\\](>\)![-aaed!ab` \!)- `(#)_-(c((a(`#)`>`n>d*#d!e*cc_a*drda
+RUST:  <p>cn#e<em>rr_d\e#<code>&gt;!\_n&gt;!#a__)!-#[*_d-ennea\]</code>nnnd_neea-ec-d(d)\n[!#c_[</em>`<em>![<em>[`c\</em></em>(!][d`\rd-![b_d`d* _cc#\ac](![##c[bbc*_b)&gt;r<code>a-ec)c_#&gt;``(n--\cab&gt;a\\](&gt;\)![-aaed!ab</code> !)- <code>(#)_-(c((a(</code>#)<code>&gt;</code>n&gt;d*#d!e<em>cc_a</em>drda</p>
+NODE:  <p>cn#e<em>rr_d\e#<code>&gt;!\_n&gt;!#a__)!-#[*_d-ennea\]</code>nnnd_neea-ec-d(d)\n[!#c_[</em><code>_![*[</code>c*_(!]<a href="!%5B##c%5Bbbc*_b">d<code>\rd-![b_d</code>d* _cc#\ac</a>&gt;r<code>a-ec)c_#&gt;``(n--\cab&gt;a\\](&gt;\)![-aaed!ab</code> !)- <code>(#)_-(c((a(</code>#)<code>&gt;</code>n&gt;d*#d!e<em>cc_a</em>drda</p>
+
+=== DIVERGENCE #2 (run 18) ===
+INPUT: -_!(d(>d!dcnna-d!*\n\(en][a!r](\-(abr\`b\c(#-b[bee)>(d(r)_bba_] b(()(*>acc#)a\(d(-[(`cb- [-r b)#(c]_>`]\_[[)!e`e_d
+RUST:  <p>-_!(d(&gt;d!dcnna-d!<em>\n(en]<a href="-(abr%60b%5Cc(#-b%5Bbee)%3E(d(r">a!r</a><em>bba</em>] b(()(</em>&gt;acc#)a(d(-[(<code>cb- [-r b)#(c]_&gt;</code>]_[[)!e`e_d</p>
+NODE:  <p>-<em>!(d(&gt;d!dcnna-d!*\n(en]<a href="-(abr%60b%5Cc(#-b%5Bbee)%3E(d(r">a!r</a>_bba_] b(()(*&gt;acc#)a(d(-[(`cb- [-r b)#(c]</em>&gt;<code>]\_[[)!e</code>e_d</p>
+
+=== DIVERGENCE #3 (run 21) ===
+INPUT: b_]*aedern>[!_[er(n\`!)#n_)nc\er-\r**b#a(-re\)` \!`c]!d)]
+RUST:  <p>b_]*aedern&gt;[!<em>[er(n`!)#n</em>)nc\er-\r**b#a(-re)<code> \!</code>c]!d)]</p>
+NODE:  <p>b_]*aedern&gt;[!_[er(n`!)#n_)nc\er-\r**b#a(-re)<code> \!</code>c]!d)]</p>
+
+=== DIVERGENCE #4 (run 29) ===
+INPUT: )r_ad_ecc#d>\d)n`#!cdan !] \[cb>- crd`\[>[[d\)>#\]`!>[!e##a- _>``c \*(#\>`!)`][)d\d>[]]e_n])\\aaa_-!d r>]d#](##a#nb]-aeb[-b_
+RUST:  <p>)r_ad_ecc#d&gt;\d)n<code>#!cdan !] \[cb&gt;- crd</code>[&gt;[[d\)&gt;#\]`!&gt;[!e##a- <em>&gt;``c \*(#\&gt;`!)`][)d\d&gt;[]]e_n])\aaa</em>-!d r&gt;]d#](##a#nb]-aeb[-b_</p>
+NODE:  <p>)r_ad_ecc#d&gt;\d)n<code>#!cdan !] \[cb&gt;- crd</code>[&gt;[[d)&gt;#]<code>!&gt;[!e##a- _&gt;``c \*(#\&gt;</code>!)`][)d\d&gt;[]]e_n])\aaa_-!d r&gt;]d#](##a#nb]-aeb[-b_</p>
+
+=== DIVERGENCE #5 (run 91) ===
+INPUT: -\r\ d]`#--dn#drn]*[\ `debcr]`)`-`#*-`>c() #na!\!e`##ee)db`c)bd]]`\_]r_\]_n# [a\]a)`*`cb`c-](\_e)e>d\)n\\na (_(a(]\ >`] d(ed-c\r[ \a\ca#-d_c(b--#!(]!d[b*\*)(`>[_[a>nb\c[b\#b>-)d>n#](r\\cr]n\[\\_\\a)dc\\)!n` (ed_e_a)\\(a(
+RUST:  <p>-\r\ d]<code>#--dn#drn]*[\ </code>debcr]<code>)</code>-<code>#*-</code>&gt;c() #na!!e<code>##ee)db</code>c)bd]]<code>\_]r_\]_n# [a\]a)</code>*<code>cb</code>c-](_e)e&gt;d)n\na (<em>(a(]\ &gt;<code>] d(ed-c\r[ \a\ca#-d_c(b--#!(]!d[b*\*)(</code>&gt;[</em>[a&gt;nb\c<a href="r%5Ccr%5Dn%5B%5C_%5Ca)dc%5C">b#b&gt;-)d&gt;n#</a>!n` (ed_e_a)\(a(</p>
+NODE:  <p>-\r\ d]<code>#--dn#drn]*[\ </code>debcr]<code>)</code>-<code>#*-</code>&gt;c() #na!!e<code>##ee)db</code>c)bd]]<code>\_]r_\]_n# [a\]a)</code>*<code>cb</code>c-](_e)e&gt;d)n\na (<em>(a(]\ &gt;<code>] d(ed-c\r[ \a\ca#-d_c(b--#!(]!d[b*\*)(</code>&gt;[</em>[a&gt;nb\c<a href="r%5Ccr%5Dn%5B%5C_%5Ca">b#b&gt;-)d&gt;n#</a>dc\)!n` (ed_e_a)\(a(</p>
+
+=== DIVERGENCE #6 (run 121) ===
+INPUT: #_\e-`e)!e>(_an \aec**))d]]_)(n(*\((_r!(\*\rc* *]>*[(*-!n!_#((`)b]rcdarn\c)ddb(dn_!*r)`)r#n -]!r n`_r adnena\-n_\*d]\_\n -d[)d\#-# (ra#rb\ad_nr\* )`b` \`c_ \\#ca\*#_]-(\(db`d--\d_>-\]a>[n\bd`a]-#erc>[!acbr`d(*b c]n#reb(>]a!-d\(r\-*_ne[[# \a![c]_e\!-\`_>`n
+RUST:  <p>#<em>\e-<code>e)!e&gt;(_an \aec**))d]]_)(n(*\((_r!(\*\rc* *]&gt;*[(*-!n!_#((</code>)b]rcdarn\c)ddb(dn</em>!*r)<code>)r#n -]!r n</code><em>r adnena-n</em>*d]_\n -d[)d#-# (ra#rb\ad_nr* )<code>b</code> `c_ \#ca*#<em>]-((db<code>d--\d_&gt;-\]a&gt;[n\bd</code>a]-#erc&gt;[!acbr<code>d(*b c]n#reb(&gt;]a!-d\(r\-*_ne[[# \a![c]_e\!-\</code></em>&gt;`n</p>
+NODE:  <p>#<em>\e-<code>e)!e&gt;(_an \aec**))d]]_)(n(*\((_r!(\*\rc* *]&gt;*[(*-!n!_#((</code>)b]rcdarn\c)ddb(dn</em>!*r)<code>)r#n -]!r n</code><em>r adnena-n</em>*d]_\n -d[)d#-# (ra#rb\ad_nr* )<code>b</code> `c_ \#ca*#<em>]-((db`d--\d</em>&gt;-]a&gt;[n\bd<code>a]-#erc&gt;[!acbr</code>d(<em>b c]n#reb(&gt;]a!-d(r-</em>_ne[[# \a![c]_e!-`_&gt;`n</p>
+
+=== DIVERGENCE #7 (run 131) ===
+INPUT: [xxx]()
+RUST:  <p><a href="">xxx</a></p>
+NODE:  <p><em>-e</em>*_[</p>
+
+=== DIVERGENCE #8 (run 143) ===
+INPUT: -]a___>[\\)(a!_ !!\`\]ea\ _!\] b_ren#n->][-_b()_(\#b  !nr _ c)\`*!cn\rd[>`ae`[nab\#na>)>n \d)!ce#_(-(!#rc(*\e_--)c_>\*[!c(d[_e((r*d[]_ b*\\c!cb_\ac_\!c[ce\\!``bd-acerc\*b#*d !e![n>er* \a>\b\!--b(_\d \
+RUST:  <p>-]a___&gt;[\\)(a!_ !!\`\]ea\ <em>!\] b_ren#n-&gt;][-<em>b()</em>(#b  !nr _ c)`*!cn\rd[&gt;`ae`[nab#na&gt;)&gt;n \d)!ce#</em>(-(!#rc(<em>\e_--)c_&gt;</em>[!c(d[<em>e((r*d[]</em> b*\c!cb_\ac_!c[ce\!``bd-acerc*b#<em>d !e![n&gt;er</em> \a&gt;\b!--b(_\d \</p>
+NODE:  <p>-]a___&gt;[\)(a!_ !!`]ea\ <em>!] b_ren#n-&gt;][-<em>b()</em>(#b  !nr _ c)`*!cn\rd[&gt;<code>ae</code>[nab#na&gt;)&gt;n \d)!ce#</em>(-(!#rc(<em>\e_--)c_&gt;*[!c(d[_e((r</em>d[]_ b*\c!cb_\ac_!c[ce\!``bd-acerc*b#<em>d !e![n&gt;er</em> \a&gt;\b!--b(_\d \</p>
+
+=== DIVERGENCE #9 (run 170) ===
+INPUT:  e!dc`e-`an\*[]]adc(c))>\rcb(!)!e>(\n*# a]ab*_!`]\c>-##)`[]e>b`! [ae[]d(#*\!-n\nrd_#dr d!nna!a\\e(er[b(!\\> n]\e[a)e-\\)]\]a#c`n!` r)bd*d][*nd-#dbr`[\-ndc])_! [d\][[]-c_de]`r]ne_[[-_n\\``c_n -\n#_**]_
+RUST:  <p> e!dc<code>e-</code>an*[]]adc(c))&gt;\rcb(!)!e&gt;(\n*# a]ab*<em>!<code>]\c&gt;-##)</code>[]e&gt;b<code>! [ae[]d(#*\!-n\nrd_#dr d!nna!a\\e(er[b(!\\&gt; n]\e[a)e-\\)]\]a#c</code>n!<code> r)bd*d][*nd-#dbr</code>[-ndc])</em>! [d][[]-c_de]`r]ne_[[-<em>n\``c_n -\n#</em>**]_</p>
+NODE:  <p> e!dc<code>e-</code>an*[]]adc(c))&gt;\rcb(!)!e&gt;(\n*# a]ab*_!<code>]\c&gt;-##)</code>[]e&gt;b<code>! [ae[]d(#*\!-n\nrd_#dr d!nna!a\\e(er[b(!\\&gt; n]\e[a)e-\\)]\]a#c</code>n!<code> r)bd*d][*nd-#dbr</code>[-ndc])<em>! [d][[]-c_de]`r]ne_[[-_n\``c_n -\n#</em>**]_</p>
+
+=== DIVERGENCE #10 (run 178) ===
+INPUT: `(#_-d>[*![*d\-da(\\b--cd)(\#_-r!\)d>n\r](_b(rn-e#!c)_-r-\-a\de!a[-b\nc[!-a((nn(*_b(\ r[
+RUST:  <p>`(#<em>-d&gt;[*<img src="_b(rn-e#!c" alt="*d-da(\b--cd)(#_-r!)d&gt;n\r"></em>-r--a\de!a[-b\nc[!-a((nn(*_b(\ r[</p>
+NODE:  <p>`(#<em>-d&gt;[*![*d-da(\b--cd)(#</em>-r!)d&gt;n\r](<em>b(rn-e#!c)</em>-r--a\de!a[-b\nc[!-a((nn(*_b(\ r[</p>
+
+=== DIVERGENCE #11 (run 190) ===
+INPUT: _)((a_\`n>c[ _r]>cd>-naa!-n)-baden*rc_d\dec*e [!> nr- -*d-`)(*!r\_ n_\)>-#*>e(`>#\-_]>\ d\]a e \#\!ce-dn!>n[ nbnbn-n`d)*_dr(-(ee`(!\\) nc(_>(*eenc\er)dbr
+RUST:  <p><em>)((a</em>`n&gt;c[ <em>r]&gt;cd&gt;-naa!-n)-baden<em>rc_d\dec</em>e [!&gt; nr- -*d-<code>)(*!r\_ n_\)&gt;-#*&gt;e(</code>&gt;#-</em>]&gt;\ d]a e #!ce-dn!&gt;n[ nbnbn-n<code>d)*_dr(-(ee</code>(!\) nc(_&gt;(*eenc\er)dbr</p>
+NODE:  <p><em>)((a</em>`n&gt;c[ <em>r]&gt;cd&gt;-naa!-n)-baden<em>rc_d\dec</em>e [!&gt; nr- -<em>d-`)(</em>!r_ n</em>)&gt;-#<em>&gt;e(<code>&gt;#\-_]&gt;\ d\]a e \#\!ce-dn!&gt;n[ nbnbn-n</code>d)</em><em>dr(-(ee`(!\) nc(</em>&gt;(*eenc\er)dbr</p>
+
+=== DIVERGENCE #12 (run 201) ===
+INPUT: b[\!] *d])`#*\\ ]e>ren_*a\!d\*neb )( *_\(-\!*r>dcb!)d]\[#-c)da` [`#`d-b()b`[]-ebr\c [](c#(`#nr-d!\n!>_r]c)b##d!-`\![*#)d>nd![c) \>_r#\rcebbb`-[>dbc)r\)c_(n!\_r\\#_*d]*d_>ed*e(d!c(e>r\n(ec\\a\>[d*#[b`(`[eb\(rb>>eb]*#_r-(e-#_nc``*\eb>
+RUST:  <p>b[!] <em>d])<code>#*\\ ]e&gt;ren_*a\!d\*neb )( *_\(-\!*r&gt;dcb!)d]\[#-c)da</code> [<code>#</code>d-b()b<code>[]-ebr\c [](c#(</code>#nr-d!\n!&gt;<em>r]c)b##d!-<code>\![*#)d&gt;nd![c) \&gt;_r#\rcebbb</code>-[&gt;dbc)r)c</em>(n!_r\#<em>*d]*d</em>&gt;ed</em>e(d!c(e&gt;r\n(ec\a&gt;[d*#[b<code>(</code>[eb(rb&gt;&gt;eb]<em>#_r-(e-#_nc``</em>\eb&gt;</p>
+NODE:  <p>b[!] <em>d])<code>#*\\ ]e&gt;ren_*a\!d\*neb )( *_\(-\!*r&gt;dcb!)d]\[#-c)da</code> [<code>#</code>d-b()b<code>[]-ebr\c [](c#(</code>#nr-d!\n!&gt;<em>r]c)b##d!-<code>\![*#)d&gt;nd![c) \&gt;_r#\rcebbb</code>-[&gt;dbc)r)c</em>(n!_r\#<em>*d]*d</em>&gt;ed<em>e(d!c(e&gt;r\n(ec\a&gt;[d</em>#[b<code>(</code>[eb(rb&gt;&gt;eb]</em>#_r-(e-#_nc``*\eb&gt;</p>
+
+=== DIVERGENCE #13 (run 269) ===
+INPUT: _]\c(b\ `b )\#d>[]>\ rc\_ *#)#brn)_)->\>-(b\b!r #>e*re>dn!]\\!eer-)a`)dbab\ba* !e\rr(nan\\\)an\--brr[>\a\`cbc\nb\(a d[!n`ac*--__#\ba]*(*`_b-*\c`c#n]b*b!c]e\d!>* _de--[c*cd])drbnca*[_))r#b -_en[>(_c_b##c)e[cer_()`*\#_*
+RUST:  <p>_]\c(b\ <code>b )\#d&gt;[]&gt;\ rc\_ *#)#brn)_)-&gt;\&gt;-(b\b!r #&gt;e*re&gt;dn!]\\!eer-)a</code>)dbab\ba* !e\rr(nan\)an--brr[&gt;\a`cbc\nb(a d[!n<code>ac*--__#\ba]*(*</code><em>b-<em>\c<code>c#n]b*b!c]e\d!&gt;* _de--[c*cd])drbnca*[_))r#b -_en[&gt;(_c_b##c)e[cer_()</code></em>#</em>*</p>
+NODE:  <p>_]\c(b\ <code>b )\#d&gt;[]&gt;\ rc\_ *#)#brn)_)-&gt;\&gt;-(b\b!r #&gt;e*re&gt;dn!]\\!eer-)a</code>)dbab\ba* !e\rr(nan\)an--brr[&gt;\a`cbc\nb(a d[!n<code>ac*--__#\ba]*(*</code>_b-<em>\c`c#n]b</em>b!c]e\d!&gt;* <em>de--[c<em>cd])drbnca</em>[</em>))r#b -<em>en[&gt;(<em>c_b##c)e[cer</em>()`*#</em>*</p>
+
+=== DIVERGENCE #14 (run 270) ===
+INPUT: dd-!!\!c\e>))\>ancc*r_*ddd[\_r\\\c\>*d)!!\c[d \](n#b`[_b-!-cn*)!r`_#n(n-(\])_*ne!!>``>!-\)-_na!aab>eb#>ded\_d`d#!b>)cd]]acr*r*-[(\[)bn`n  d)]_#_r]nder !dr\ee#`r#!]c#ad\`b( cdcc *_[e \r\n[ec_]#n`d!_c!-`_e]n#!)rbdd_a(#]*>cd`[-(_![d)-(d(n!)nr][(-b_
+RUST:  <p>dd-!!!c\e&gt;))&gt;ancc*r_*ddd[_r\\c&gt;*d)!!\c[d ](n#b<code>[_b-!-cn*)!r</code><em>#n(n-(])</em><em>ne!!&gt;``&gt;!-)-<em>na!aab&gt;eb#&gt;ded_d<code>d#!b&gt;)cd]]acr*r*-[(\[)bn</code>n  d)]</em>#<em>r]nder !dr\ee#<code>r#!]c#ad\</code>b( cdcc *</em>[e \r\n[ec_]#n<code>d!_c!-</code>_e]n#!)rbdd_a(#]</em>&gt;cd`[-(<em>![d)-(d(n!)nr][(-b</em></p>
+NODE:  <p>dd-!!!c\e&gt;))&gt;ancc*r_<em>ddd[_r\\c&gt;<em>d)!!\c[d ](n#b<code>[_b-!-cn*)!r</code>_#n(n-(])_*ne!!&gt;``&gt;!-)-_na!aab&gt;eb#&gt;ded_d`d#!b&gt;)cd]]acr</em>r</em>-[([)bn<code>n  d)]_#_r]nder !dr\ee#</code>r#!]c#ad`b( cdcc *_[e \r\n[ec_]#n<code>d!_c!-</code><em>e]n#!)rbdd_a(#]*&gt;cd`[-(</em>![d)-(d(n!)nr][(-b_</p>
+
+=== DIVERGENCE #15 (run 301) ===
+INPUT: [\ca-#[#]#e`\*b\b!\!e[bc `-! n-!-]dc!\)>n##-\d>a*\-c!\`_c ((-\\>[e`*ca)))->_)b_\\_dr)]d_*![-*!*\\(>!*_\#[d]>`[a[er[_*]*\ r-de>\`ra*r_c)]((ne`eb\d`*])-!! e*)\)\e*rr] (\*e`)[(*a(e(>[d\d)`rd(cbn`>a[c\ad#d*#[e\*\!`)] n`en\n
+RUST:  <p>[\ca-#[#]#e<code>\*b\b!\!e[bc </code>-! n-!-]dc!)&gt;n##-\d&gt;a*-c!`_c ((-\&gt;[e<code>*ca)))-&gt;_)b_\\_dr)]d_*![-*!*\\(&gt;!*_\#[d]&gt;</code>[a<a href="(ne%60eb%5Cd%60*%5D">er[_<em>]</em>\ r-de&gt;`ra*r_c)</a>-!! e*))\e*rr] (*e<code>)[(*a(e(&gt;[d\d)</code>rd(cbn<code>&gt;a[c\ad#d*#[e\*\!</code>)] n`en\n</p>
+NODE:  <p>[\ca-#[#]#e<code>\*b\b!\!e[bc </code>-! n-!-]dc!)&gt;n##-\d&gt;a*-c!`<em>c ((-\&gt;[e`*ca)))-&gt;</em>)b_\<em>dr)]d</em><em>![-</em>!<em>\(&gt;!</em>_#[d]&gt;<code>[a[er[_*]*\ r-de&gt;\</code>ra<em>r_c)]((ne<code>eb\d</code></em>])-!! e*))\e*rr] (*e<code>)[(*a(e(&gt;[d\d)</code>rd(cbn<code>&gt;a[c\ad#d*#[e\*\!</code>)] n`en\n</p>
+
+=== DIVERGENCE #16 (run 348) ===
+INPUT: `_r-[_`\!)r`ca *!_)!n\*a-#e\b\-(naa`n>-a _-!\#>r])n#\[!n!][``\[_ [*c\*\*>_*>_`-[dne*c(]_`rd\`)!#b\`-an\b(c\d(![)(e\r\>)r)eb`e>n*d!r\]`a [c\ `)b\(\->[#r(can!-ba(>`\`bene>rc\n[_))r!>-#!d!>-d]!\[b*\)#(na !>bd]\b\_c-(#!_r]d[dc` \c[c)\rc>-[db!a-[_e\_dd>c]\b\)- (er_!]\]\\[[]>][ad>edb#!a
+RUST:  <p><code>_r-[_</code>!)r<code>ca *!_)!n\*a-#e\b\-(naa</code>n&gt;-a <em>-!#&gt;r])n#[!n!][``[</em> [<em>c**&gt;_</em>&gt;<em><code>-[dne*c(]_</code>rd`)!#b`-an\b(c\d(![)(e\r&gt;)r)eb<code>e&gt;n*d!r\]</code>a [c\ <code>)b\(\-&gt;[#r(can!-ba(&gt;</code>`bene&gt;rc\n[</em>))r!&gt;-#!d!&gt;-d]![b*)#(na !&gt;bd]\b_c-(#!_r]d[dc` \c[c)\rc&gt;-[db!a-[<em>e_dd&gt;c]\b)- (er</em>!]]\[[]&gt;][ad&gt;edb#!a</p>
+NODE:  <p><code>_r-[_</code>!)r<code>ca *!_)!n\*a-#e\b\-(naa</code>n&gt;-a <em>-!#&gt;r])n#[!n!][``[</em> [<em>c**&gt;_</em>&gt;_<code>-[dne*c(]_</code>rd`)!#b`-an\b(c\d(![)(e\r&gt;)r)eb<code>e&gt;n*d!r\]</code>a [c\ <code>)b\(\-&gt;[#r(can!-ba(&gt;</code>`bene&gt;rc\n[_))r!&gt;-#!d!&gt;-d]![b*)#(na !&gt;bd]\b_c-(#!_r]d[dc` \c[c)\rc&gt;-[db!a-[<em>e_dd&gt;c]\b)- (er</em>!]]\[[]&gt;][ad&gt;edb#!a</p>
+
+=== DIVERGENCE #17 (run 353) ===
+INPUT: \ )_\ ]`\]#]>)\d- \[d[-b)c#c*n!bn[`a `[!*)(\e  >r*#!*)bd]r#e \[dbrna`ca]!\-]> n*c [bbd-_*`` (a][ne-\\er)n>#>\]e>d\d\_[) bncn\`!cr`>d_*b__a!)a]d\r\(-*!\_c[*(#d>b_d#]#>#\r(c!\e*]b)#\]`\b (_\a-*_]e[an*n*>]r\*)a*\-r]-nb>_]ea*>d[nr#cra>ab(_r#*r!(c>_b_\dr-  
+RUST:  <p>\ )<em>\ ]<code>\]#]&gt;)\d- \[d[-b)c#c*n!bn[</code>a <code>[!*)(\e  &gt;r*#!*)bd]r#e \[dbrna</code>ca]!-]&gt; n*c [bbd-</em><em>`` (a][ne-\er)n&gt;#&gt;]e&gt;d\d_[) bncn`!cr<code>&gt;d_*b__a!)a]d\r\(-*!\_c[*(#d&gt;b_d#]#&gt;#\r(c!\e*]b)#\]</code>\b (_\a-</em><em>]e[an<em>n</em>&gt;]r*)a*-r]-nb&gt;</em>]ea*&gt;d[nr#cra&gt;ab(_r#*r!(c&gt;<em>b</em>\dr-  </p>
+NODE:  <p>\ )<em>\ ]<code>\]#]&gt;)\d- \[d[-b)c#c*n!bn[</code>a <code>[!*)(\e  &gt;r*#!*)bd]r#e \[dbrna</code>ca]!-]&gt; n*c [bbd-</em><em>`` (a][ne-\er)n&gt;#&gt;]e&gt;d\d_[) bncn`!cr`&gt;d_<em>b__a!)a]d\r(-</em>!_c[</em>(#d&gt;b_d#]#&gt;#\r(c!\e*]b)#]`\b (<em>\a-*</em>]e[an<em>n</em>&gt;]r*)a*-r]-nb&gt;_]ea*&gt;d[nr#cra&gt;ab(_r#*r!(c&gt;<em>b</em>\dr-  </p>
+
+=== DIVERGENCE #18 (run 364) ===
+INPUT: *#`\b)c\`d][-) c! -_*#n!!e\rra>c-e*_r_n>dac\(\>#a[-][)[-b[)a)`!]\\be\n\>)a!_>n>\\ar[)(b)\\[) c>(-]]))ncb_n(nb_-]` b(-e(bcn (c\e)r>-*r]-!a[ba-d)\[cn`-!\)_cec#]`*a*#-c\rn[(
+RUST:  <p><em>#<code>\b)c\</code>d][-) c! -_</em>#n!!e\rra&gt;c-e*<em>r_n&gt;dac(&gt;#a[-][)[-b[)a)`!]\be\n&gt;)a!</em>&gt;n&gt;\ar[)(b)\[) c&gt;(-]]))ncb_n(nb_-]<code> b(-e(bcn (c\e)r&gt;-*r]-!a[ba-d)\[cn</code>-!)_cec#]`<em>a</em>#-c\rn[(</p>
+NODE:  <p><em>#<code>\b)c\</code>d][-) c! -_</em>#n!!e\rra&gt;c-e*_r_n&gt;dac(&gt;#a[-][)[-b[)a)<code>!]\\be\n\&gt;)a!_&gt;n&gt;\\ar[)(b)\\[) c&gt;(-]]))ncb_n(nb_-]</code> b(-e(bcn (c\e)r&gt;-*r]-!a[ba-d)[cn<code>-!\)_cec#]</code><em>a</em>#-c\rn[(</p>
+
+=== DIVERGENCE #19 (run 389) ===
+INPUT: \\[#bc\\*a-b)(#d_aar` ! [\b[rar!(b!>#e*r\\]an[\)]*c\n\ ) r]n>dn]* n>*))-d`d*r#rnb*b-\\\`(an!nr\_b#!(n#dd_*(#>_` bbb!\ ] #\dab`-d\ca`r!bnnb->\#rd[e*!!![\!!e!\_an\[bb-c\n!\!!)r_]-_! >\ rc\d! _)_ b_bc>>)\n>(aed *_(cr>!!*\*e[`!>\[>*ada
+RUST:  <p>\[#bc\<em>a-b)(#d_aar<code> ! [\b[rar!(b!&gt;#e*r\\]an[\)]*c\n\ ) r]n&gt;dn]* n&gt;*))-d</code>d</em>r#rnb<em>b-\`(an!nr_b#!(n#dd_</em>(#&gt;_<code> bbb!\ ] #\dab</code>-d\ca<code>r!bnnb-&gt;\#rd[e*!!![\!!e!\_an\[bb-c\n!\!!)r_]-_! &gt;\ rc\d! _)_ b_bc&gt;&gt;)\n&gt;(aed *_(cr&gt;!!*\*e[</code>!&gt;[&gt;*ada</p>
+NODE:  <p>\[#bc\<em>a-b)(#d_aar<code> ! [\b[rar!(b!&gt;#e*r\\]an[\)]*c\n\ ) r]n&gt;dn]* n&gt;*))-d</code>d</em>r#rnb<em>b-\`(an!nr_b#!(n#dd_*(#&gt;_<code> bbb!\ ] #\dab</code>-d\ca`r!bnnb-&gt;#rd[e</em>!!![!!e!_an[bb-c\n!!!)r_]-<em>! &gt;\ rc\d! <em>)</em> b_bc&gt;&gt;)\n&gt;(aed *</em>(cr&gt;!!**e[`!&gt;[&gt;*ada</p>
+
+=== DIVERGENCE #20 (run 414) ===
+INPUT: _>r#)-d[!(a!d  #]e)d]-dnr!\>!e`d-c*_ b\eb`-r>-\`a-\n#(*__>\n! dnn#a_r#[\(!!a\a-d*nb#!*] `)]e#-!\rd!_d>-*!
+RUST:  <p>_&gt;r#)-d[!(a!d  #]e)d]-dnr!&gt;!e<code>d-c*_ b\eb</code>-r&gt;-`a-\n#(<em>__&gt;\n! dnn#a_r#[(!!a\a-d</em>nb#!<em>] `)]e#-!\rd!_d&gt;-</em>!</p>
+NODE:  <p>_&gt;r#)-d[!(a!d  #]e)d]-dnr!&gt;!e<code>d-c*_ b\eb</code>-r&gt;-`a-\n#(<em>__&gt;\n! dnn#a_r#[(!!a\a-d<em>nb#!</em>] `)]e#-!\rd!_d&gt;-</em>!</p>
+
+=== DIVERGENCE #21 (run 515) ===
+INPUT: #]`\a]r_[e\d\a#e`![]]b*\]#rna_)_ccd#][_>c-b**\-[c[c[[(cc\[\a_ !#rb*[#renbb(>d[`[ nba)*]>#-re`!bed #_ da#r>a #a_a ea _`bb#\# #-da)na \de(>e!#>\>*b`*\*\([>]]_e da[c!```_[a_\!a`b\!e_c>cae\#a[b#][!\`\_[ n]-`\!***`(brrc-!d\>)cr*c[[e_\_>)(-#]er*\d!ae[#n)#a)>-r-c!b]]>*!\->)#- [n`![!n\]\ _ a!]!]
+RUST:  <p>#]<code>\a]r_[e\d\a#e</code>![]]b*]#rna_)<em>ccd#][</em>&gt;c-b**-[c[c[[(cc[\a_ !#rb*[#renbb(&gt;d[<code>[ nba)*]&gt;#-re</code>!bed #_ da#r&gt;a #a_a ea <em><code>bb#\# #-da)na \de(&gt;e!#&gt;\&gt;*b</code>**([&gt;]]<em>e da[c!```</em>[a</em>!a<code>b\!e_c&gt;cae\#a[b#][!\</code>_[ n]-<code>\!***</code>(brrc-!d&gt;)cr<em>c[[e__&gt;)(-#]er</em>\d!ae[#n)#a)&gt;-r-c!b]]&gt;*!-&gt;)#- [n`![!n]\ _ a!]!]</p>
+NODE:  <p>#]<code>\a]r_[e\d\a#e</code>![]]b*]#rna_)<em>ccd#][</em>&gt;c-b**-[c[c[[(cc[\a_ !#rb*[#renbb(&gt;d[<code>[ nba)*]&gt;#-re</code>!bed #_ da#r&gt;a #a_a ea _<code>bb#\# #-da)na \de(&gt;e!#&gt;\&gt;*b</code><em>*([&gt;]]_e da[c!```_[a_!a<code>b\!e_c&gt;cae\#a[b#][!\</code>_[ n]-`!</em>**<code>(brrc-!d\&gt;)cr*c[[e_\_&gt;)(-#]er*\d!ae[#n)#a)&gt;-r-c!b]]&gt;*!\-&gt;)#- [n</code>![!n]\ _ a!]!]</p>
+
+=== DIVERGENCE #22 (run 535) ===
+INPUT: ])>-nb(\)\]**nd#!_#\]!__]ar\[b]c>er- >(n\ [a(a_bn`]!r>*\#\[d\\[]b*)db#\_rnr )_rbe r(!)`*\bn]_b_c[(_!)>c!_e-e!dc`>a###**re\[ac!cn)!#e) -eee*\db[n#]#de\)_c- _`\e>!n-*##a[\!![> ]__ca*  r(# !r
+RUST:  <p>])&gt;-nb()]*<em>nd#!_#]!__]ar[b]c&gt;er- &gt;(n\ [a(a_bn<code>]!r&gt;*\#\[d\\[]b*)db#\_rnr )_rbe r(!)</code><em>\bn]<em>b_c[(</em>!)&gt;c!_e-e!dc<code>&gt;a###**re\[ac!cn)!#e) -eee*\db[n#]#de\)_c- _</code>\e&gt;!n-</em>##a[!![&gt; ]__ca</em>  r(# !r</p>
+NODE:  <p>])&gt;-nb()]*<em>nd#!_#]!__]ar[b]c&gt;er- &gt;(n\ [a(a_bn<code>]!r&gt;*\#\[d\\[]b*)db#\_rnr )_rbe r(!)</code></em>\bn]<em>b_c[(</em>!)&gt;c!_e-e!dc<code>&gt;a###**re\[ac!cn)!#e) -eee*\db[n#]#de\)_c- _</code>\e&gt;!n-<em>##a[!![&gt; ]__ca</em>  r(# !r</p>
+
+=== DIVERGENCE #23 (run 543) ===
+INPUT: d)and][d\n_*- \r>_)r___ac(-rbc#]`\\aa>#e*_\`e>-]\ `bb!da`r[\bna`]cba-_]d]annb\]br``d)rd\`r>c_c\)-b\#n]\-] b>c\>)b!_\(()e`_!)n[\d`car]bc#e#`*-ed>c *c[n [-`)bc`_dd]e!!bn_\e#(_)) (!a--n#)[[\*c[)c!ar *#b_(>ncdrrb*(en \*#-]#-da\#a[>  ]c *e _
+RUST:  <p>d)and][d\n_<em>- \r&gt;<em>)r___ac(-rbc#]<code>\\aa&gt;#e*_\</code>e&gt;-]\ <code>bb!da</code>r[\bna<code>]cba-_]d]annb\]br``d)rd\</code>r&gt;c_c)-b#n]-] b&gt;c&gt;)b!</em>(()e<code>_!)n[\d</code>car]bc#e#<code>*-ed&gt;c *c[n [-</code>)bc`<em>dd]e!!bn</em>\e#(<em>)) (!a--n#)[[*c[)c!ar *#b</em>(&gt;ncdrrb</em>(en *#-]#-da#a[&gt;  ]c *e _</p>
+NODE:  <p>d)and][d\n_*- \r&gt;<em>)r___ac(-rbc#]<code>\\aa&gt;#e*_\</code>e&gt;-]\ <code>bb!da</code>r[\bna<code>]cba-_]d]annb\]br``d)rd\</code>r&gt;c_c)-b#n]-] b&gt;c&gt;)b!</em>(()e<code>_!)n[\d</code>car]bc#e#<code>*-ed&gt;c *c[n [-</code>)bc`<em>dd]e!!bn</em>\e#(<em>)) (!a--n#)[[*c[)c!ar *#b</em>(&gt;ncdrrb*(en *#-]#-da#a[&gt;  ]c *e _</p>
+
+=== DIVERGENCE #24 (run 556) ===
+INPUT: ae! ]racdd!d ]`eer!)a n-c[  \c-(>!#] >d[b`)_! #-*[\n*>!``dd`e#`c[-bb!a>cannac\ [-#e_a([[ re\`b](c*b)( !*r\>c[!>)\(\#!#`\``_\aa)ebb\d(nd((ad-a-\n]a)_\c!d#[#a]>>_ *- -!r #ndn]\))n\e\\]!`eec\ ]r#] !\(()>>`)\[`-!# b\*c!-*-_-(]*\>\c*!#_r!-\ce]>c*n)>-d r_-
+RUST:  <p>ae! ]racdd!d ]<code>eer!)a n-c[  \c-(&gt;!#] &gt;d[b</code>)<em>! #-<em>[\n</em>&gt;!<code>dd`e#`c[-bb!a&gt;cannac\ [-#e_a([[ re\`b](c*b)( !*r\&gt;c[!&gt;)\(\#!#`\</code></em>\aa)ebb\d(nd((ad-a-\n]a)<em>\c!d#[#a]&gt;&gt;</em> <em>- -!r #ndn]))n\e\]!<code>eec\ ]r#] !\(()&gt;&gt;</code>)[`-!# b*c!-</em>-_-(]<em>&gt;\c</em>!#<em>r!-\ce]&gt;c*n)&gt;-d r</em>-</p>
+NODE:  <p>ae! ]racdd!d ]<code>eer!)a n-c[  \c-(&gt;!#] &gt;d[b</code>)<em>! #-<em>[\n</em>&gt;!<code>dd`e#`c[-bb!a&gt;cannac\ [-#e_a([[ re\`b](c*b)( !*r\&gt;c[!&gt;)\(\#!#`\</code>_\aa)ebb\d(nd((ad-a-\n]a)_\c!d#[#a]&gt;&gt;_ <em>- -!r #ndn]))n\e\]!<code>eec\ ]r#] !\(()&gt;&gt;</code>)[`-!# b*c!-</em>-</em>-(]<em>&gt;\c</em>!#<em>r!-\ce]&gt;c*n)&gt;-d r</em>-</p>
+
+=== DIVERGENCE #25 (run 557) ===
+INPUT: [a>an]d-`d#\*_]b[_[\#\-\]dc`d`>#_!\a-\`>]_ \)(_*#_n_a)\`[\\n\ \[\!\)\>c]ar*]b!``a>ecnad>dadr!abcb--b-#*c)*>-b\[c#*)!-nb[ \n !-#[rrd-_)e(\ecdnn r n)`_`_e(`))b_n[c>_>)*ab)#e\be-!n)#!]>!erb*\c]\brrbr(#a!]c\!r !]r#)[\>`)#!!\ea!*)*\-)\)-(`!e`ar>
+RUST:  <p>[a&gt;an]d-<code>d#\*_]b[_[\#\-\]dc</code>d<code>&gt;#_!\a-\</code>&gt;]_ )(<em><em>#_n_a)`[\n\ [!)&gt;c]ar</em>]b!``a&gt;ecnad&gt;dadr!abcb--b-#<em>c)</em>&gt;-b[c#*)!-nb[ \n !-#[rrd-</em>)e(\ecdnn r n)<code>_</code>_e(<code>))b_n[c&gt;_&gt;)*ab)#e\be-!n)#!]&gt;!erb*\c]\brrbr(#a!]c\!r !]r#)[\&gt;</code>)#!!\ea!<em>)</em>-))-(<code>!e</code>ar&gt;</p>
+NODE:  <p>[a&gt;an]d-<code>d#\*_]b[_[\#\-\]dc</code>d<code>&gt;#_!\a-\</code>&gt;]_ )(<em>*#<em>n_a)`[\n\ [!)&gt;c]ar*]b!``a&gt;ecnad&gt;dadr!abcb--b-#*c)*&gt;-b[c#*)!-nb[ \n !-#[rrd-_)e(\ecdnn r n)`</em><code>_e(</code>))b_n[c&gt;</em>&gt;)<em>ab)#e\be-!n)#!]&gt;!erb</em>\c]\brrbr(#a!]c!r !]r#)[&gt;<code>)#!!\ea!*)*\-)\)-(</code>!e`ar&gt;</p>
+
+=== DIVERGENCE #26 (run 578) ===
+INPUT: aba ]*[\`>)>#]d#*b!dcd-)-d]re[  (d ( -a*>__rrdr``b*d[#!ab\]`[da]-_#)[\aec a)>d_-[\\!))*b)*)db[\\c_\([)>!rb_(_])`a\(\)#\_b]]nb- d] )[rn)_[a(]])a(ber*n\`-crbd\ d-[ >)\ n()*-c]] a`_`beb#an#]!-c![nb`ea#\  !*d` [!]d[[-n[--*nn) d`---e_\\\eb([dc>\)a]cb\#a ![d )(aede)-\c((n-)(e\!n*n`)\\!-_ \r
+RUST:  <p>aba ]<em>[`&gt;)&gt;#]d#<em>b!dcd-)-d]re[  (d ( -a</em>&gt;__rrdr``b</em>d[#!ab]<code>[da]-_#)[\aec a)&gt;d_-[\\!))*b)*)db[\\c_\([)&gt;!rb_(_])</code>a()#_b]]nb- d] )[rn)<em>[a(]])a(ber<em>n`-crbd\ d-[ &gt;)\ n()</em>-c]] a<code>_</code>beb#an#]!-c![nb<code>ea#\  !*d</code> [!]d[[-n[--*nn) d<code>---e_\\\eb([dc&gt;\)a]cb\#a ![d )(aede)-\c((n-)(e\!n*n</code>)\!-</em> \r</p>
+NODE:  <p>aba ]<em>[`&gt;)&gt;#]d#*b!dcd-)-d]re[  (d ( -a*&gt;<em><em>rrdr``b*d[#!ab]`[da]-</em>#)[\aec a)&gt;d_-[\!))<em>b)</em>)db[\c</em>([)&gt;!rb_(_])<code>a\(\)#\_b]]nb- d] )[rn)_[a(]])a(ber*n\</code>-crbd\ d-[ &gt;)\ n()</em>-c]] a<code>_</code>beb#an#]!-c![nb<code>ea#\  !*d</code> [!]d[[-n[--*nn) d<code>---e_\\\eb([dc&gt;\)a]cb\#a ![d )(aede)-\c((n-)(e\!n*n</code>)\!-_ \r</p>
+
+=== DIVERGENCE #27 (run 597) ===
+INPUT: rnb]db]-!*(erc a-rdr[#nra[(a`!\!(ra`]*[_>r e!(#er(->-\ n)d->r)[(c)a[`#e\rb\e[(na-](-)-\ bnc**rd-_[b*ab n\c_c#d\-*`[b]\*#crn]>a_` a(r( *(#\_) -!b!\(\\_`])\a)\r]ce-\!c(d!\--[\eeren[\`]a]`(\--(\>_>!#`*d-*]c`]daa\a\ d\]\e)*`((#[)a-*\))[_-n ]e#_-*r`d\e
+RUST:  <p>rnb]db]-!<em>(erc a-rdr[#nra[(a<code>!\!(ra</code>]</em>[<em>&gt;r e!(#er(-&gt;-\ n)d-&gt;r)[(c)a[<code>#e\rb\e[(na-](-)-\ bnc**rd-_[b*ab n\c_c#d\-*</code>[b]*#crn]&gt;a</em><code> a(r( *(#\_) -!b!\(\\_</code>])\a)\r]ce-!c(d!--[\eeren[`]a]<code>(\--(\&gt;_&gt;!#</code><em>d-</em>]c<code>]daa\a\ d\]\e)*</code>((#[)a-*))[<em>-n ]e#</em>-*r`d\e</p>
+NODE:  <p>rnb]db]-!<em>(erc a-rdr[#nra[(a<code>!\!(ra</code>]</em>[<em>&gt;r e!(#er(-&gt;-\ n)d-&gt;r)[(c)a[<code>#e\rb\e[(na-](-)-\ bnc**rd-_[b*ab n\c_c#d\-*</code>[b]*#crn]&gt;a</em><code> a(r( *(#\_) -!b!\(\\_</code>])\a)\r]ce-!c(d!--[\eeren[`]a]<code>(\--(\&gt;_&gt;!#</code><em>d-*]c`]daa\a\ d]\e)</em><code>((#[)a-*\))[_-n ]e#_-*r</code>d\e</p>
+
+=== DIVERGENCE #28 (run 604) ===
+INPUT: b_>dc\!b_[nn#)!) \!\*>]#b\>[( bd_\*>##)\e-rcra)`r[\)d- da(e*\e*!__)c>*\b)aan`>\(*\n(c`*-#\\r--[\!arc`)]]r_dnd!\-(#_)d ]_*- ]d#a !#[`)(\`#]b[>[>abcb#\\ b`[(>\r` \`da\((]a>*a*`\d*e*-_ab-( n]be)`nea>(- d
+RUST:  <p>b_&gt;dc!b_[nn#)!) !*&gt;]#b&gt;[( bd_*&gt;##)\e-rcra)<code>r[\)d- da(e*\e*!__)c&gt;*\b)aan</code>&gt;(<em>\n(c<code>*-#\\r--[\!arc</code>)]]r_dnd!-(#<em>)d ]</em></em>- ]d#a !#[<code>)(\</code>#]b[&gt;[&gt;abcb#\ b<code>[(&gt;\r</code> `da((]a&gt;<em>a</em><code>\d*e*-_ab-( n]be)</code>nea&gt;(- d</p>
+NODE:  <p>b_&gt;dc!b_[nn#)!) !*&gt;]#b&gt;[( bd_*&gt;##)\e-rcra)<code>r[\)d- da(e*\e*!__)c&gt;*\b)aan</code>&gt;(<em>\n(c<code>*-#\\r--[\!arc</code>)]]r_dnd!-(#<em>)d ]</em></em>- ]d#a !#[<code>)(\</code>#]b[&gt;[&gt;abcb#\ b<code>[(&gt;\r</code> `da((]a&gt;<em>a*`\d</em>e*-_ab-( n]be)`nea&gt;(- d</p>
+
+=== DIVERGENCE #29 (run 683) ===
+INPUT: nd[`) `brc`-((\_`b[baa#`\\-`[d)eb_[>nn\rad#b#  *_#-)bn!>n``aa#*rb!>dc e([n\-enan(--\c#c>_b\ a-nb_!n_]_aecb*b-(r>d*>!#b#(`ebn)a_[ > e>c*d!*\`#`-( #r(
+RUST:  <p>nd[<code>) </code>brc<code>-((\_</code>b[baa#<code>\\-</code>[d)eb_[&gt;nn\rad#b#  <em><em>#-)bn!&gt;n``aa#*rb!&gt;dc e([n-enan(--\c#c&gt;<em>b\ a-nb</em>!n</em>]_aecb</em>b-(r&gt;d*&gt;!#b#(<code>ebn)a_[ &gt; e&gt;c*d!*\</code>#`-( #r(</p>
+NODE:  <p>nd[<code>) </code>brc<code>-((\_</code>b[baa#<code>\\-</code>[d)eb_[&gt;nn\rad#b#  <em><em>#-)bn!&gt;n``aa#*rb!&gt;dc e([n-enan(--\c#c&gt;<em>b\ a-nb</em>!n</em>]_aecb*b-(r&gt;d</em>&gt;!#b#(<code>ebn)a_[ &gt; e&gt;c*d!*\</code>#`-( #r(</p>
+
+=== DIVERGENCE #30 (run 689) ===
+INPUT: ba\(dnnenr`>>(](! a_!e*#-`\`(\c*br#]]![\b-]ndb#n\a_er`ce `n)>ea`> (ce![!e (#e_*\]>*`r[n\ >a[_\n`n\]-c]-c#cbr-cdccbb*!_-#_a`\*#)`\ca >ce_((]a(!*rbaded >])#\*!*`d#`n( ae abc][n]c)_>\\-ebr n\-de>n#]eea#]!**)c# e)
+RUST:  <p>ba(dnnenr<code>&gt;&gt;(](! a_!e*#-</code>`(\c*br#]]![\b-]ndb#n\a_er<code>ce </code>n)&gt;ea<code>&gt; (ce![!e (#e_*\]&gt;*</code>r[n\ &gt;a[<em>\n<code>n\]-c]-c#cbr-cdccbb*!_-#_a</code>*#)<code>\ca &gt;ce_((]a(!*rbaded &gt;])#\*!*</code>d#`n( ae abc][n]c)</em>&gt;\-ebr n-de&gt;n#]eea#]!**)c# e)</p>
+NODE:  <p>ba(dnnenr<code>&gt;&gt;(](! a_!e*#-</code>`(\c<em>br#]]![\b-]ndb#n\a_er<code>ce </code>n)&gt;ea`&gt; (ce![!e (#e_</em>]&gt;<em><code>r[n\ &gt;a[_\n</code>n]-c]-c#cbr-cdccbb</em>!<em>-#<em>a<code>\*#)</code>\ca &gt;ce</em>((]a(!<em>rbaded &gt;])#*!</em><code>d#</code>n( ae abc][n]c)</em>&gt;\-ebr n-de&gt;n#]eea#]!**)c# e)</p>
+
+=== DIVERGENCE #31 (run 702) ===
+INPUT: r[e_r>n`--*ee][(_c)ne`e( ndc*#\c`\[\-e[a->`r\___->`[\]e[>(#]d# e->r!cn*`da\d>\r[#c!>c`_
+RUST:  <p>r[e_r&gt;n<code>--*ee][(_c)ne</code>e( ndc*#\c<code>\[\-e[a-&gt;</code>r___-&gt;<code>[\]e[&gt;(#]d# e-&gt;r!cn*</code>da\d&gt;\r[#c!&gt;c`_</p>
+NODE:  <p>r[e_r&gt;n<code>--*ee][(_c)ne</code>e( ndc*#\c<code>\[\-e[a-&gt;</code>r__<em>-&gt;<code>[\]e[&gt;(#]d# e-&gt;r!cn*</code>da\d&gt;\r[#c!&gt;c`</em></p>
+
+=== DIVERGENCE #32 (run 737) ===
+INPUT: \-[c]c`)e\\`>ba\[-n\ra a\`ebrr__er-\bn`cc\dn(aa_c`)\(-\e#(a\db!]`()\(`d\#[[-`n(b\a]n)*-->a_a-))\#)][-#!)\!\*`-d --e!>![\ \c_\`r#*>\>#_``#((]n>]b[_!#\#a`_d\c!-_``[\]a[`e>#a-*r>r>ec(*(_[_r[e!\_*r`-!r]d)-d]`)#>d)[r\b\r# c(!*--\d`]\\--!a ``>- rnc* \ar#>-#b`)
+RUST:  <p>-[c]c<code>)e\\</code>&gt;ba[-n\ra a`ebrr__er-\bn<code>cc\dn(aa_c</code>)(-\e#(a\db!]<code>()\(</code>d#[[-<code>n(b\a]n)*--&gt;a_a-))\#)][-#!)\!\*</code>-d --e!&gt;![\ \c_`r#<em>&gt;&gt;#_<code>#((]n&gt;]b[_!#\#a`_d\c!-_</code>[]a[<code>e&gt;#a-*r&gt;r&gt;ec(*(_[_r[e!\_*r</code>-!r]d)-d]<code>)#&gt;d)[r\b\r# c(!*--\d</code>]\--!a ``&gt;- rnc</em> \ar#&gt;-#b`)</p>
+NODE:  <p>-[c]c<code>)e\\</code>&gt;ba[-n\ra a`ebrr__er-\bn<code>cc\dn(aa_c</code>)(-\e#(a\db!]<code>()\(</code>d#[[-<code>n(b\a]n)*--&gt;a_a-))\#)][-#!)\!\*</code>-d --e!&gt;![\ \c_`r#*&gt;&gt;#<em>``#((]n&gt;]b[</em>!##a<code>_d\c!-_``[\]a[</code>e&gt;#a-<em>r&gt;r&gt;ec(</em>(_[_r[e!_<em>r<code>-!r]d)-d]</code>)#&gt;d)[r\b\r# c(!</em>--\d<code>]\\--!a ``&gt;- rnc* \ar#&gt;-#b</code>)</p>
+
+=== DIVERGENCE #33 (run 757) ===
+INPUT: ]-e* \ `(*d# _ce-en_](*[\*#!)`_-)(d(`\cb[b_)-r_b` \e]rr](r\]]a\r`(-`*r)[r)a )#_r>d`](n*)>#r!r\e(*n>e(])d-\`r\d-!\[*_[c]n#ann[c>e\n]!])[d_(a]*[r>re\-\>`#!- a`[bbdd#c e!e! -rd_c\`dn>`e>]-)(a_n]n`b
+RUST:  <p>]-e* \ <code>(*d# _ce-en_](*[\*#!)</code><em>-)(d(<code>\cb[b_)-r_b</code> \e]rr](r]]a\r<code>(-</code><em>r)[r)a )#_r&gt;d<code>](n*)&gt;#r!r\e(*n&gt;e(])d-\</code>r\d-![</em></em>[c]n#ann[c&gt;e\n]!])[d_(a]*[r&gt;re-&gt;<code>#!- a</code>[bbdd#c e!e! -rd_c`dn&gt;<code>e&gt;]-)(a_n]n</code>b</p>
+NODE:  <p>]-e* \ <code>(*d# _ce-en_](*[\*#!)</code>_-)(d(<code>\cb[b_)-r_b</code> \e]rr](r]]a\r<code>(-</code>*r)[r)a )#_r&gt;d<code>](n*)&gt;#r!r\e(*n&gt;e(])d-\</code>r\d-![*_[c]n#ann[c&gt;e\n]!])[d_(a]*[r&gt;re-&gt;<code>#!- a</code>[bbdd#c e!e! -rd_c`dn&gt;<code>e&gt;]-)(a_n]n</code>b</p>
+
+=== DIVERGENCE #34 (run 764) ===
+INPUT: !>]]\`)[]b( ]]!( c*ed]>\\b\e-[)c`)!a)``b)!a!cc([_`[\ce(*c]`]_d>*e]c])()]-(c\r![(\rn(-]nd`_e()n((#(``r#a]nc_!\[!bdn(!edb\] ]!`b_ne(d*(# _]#nc!)#]*\]n>!>)raa_)a)cb[\ bec*#()[_(c>(`b\_\c\ca]`>#c r!a[ene`[c`(n\--rc\#\>`nbd(][*>-\_-e*n#!d\)_- [rdnb-_d\da nbc[`
+RUST:  <p>!&gt;]]`)[]b( ]]!( c<em>ed]&gt;\b\e-[)c<code>)!a)``b)!a!cc([_</code>[\ce(<em>c]<code>]_d&gt;*e]c])()]-(c\r![(\rn(-]nd</code><em>e()n((#(``r#a]nc</em>![!bdn(!edb] ]!<code>b_ne(d*(# _]#nc!)#]*\]n&gt;!&gt;)raa_)a)cb[\ bec*#()[_(c&gt;(</code>b_\c\ca]<code>&gt;#c r!a[ene</code>[c<code>(n\--rc\#\&gt;</code>nbd(][</em>&gt;-_-e</em>n#!d)_- [rdnb-_d\da nbc[`</p>
+NODE:  <p>!&gt;]]`)[]b( ]]!( c<em>ed]&gt;\b\e-[)c<code>)!a)``b)!a!cc([_</code>[\ce(<em>c]<code>]_d&gt;*e]c])()]-(c\r![(\rn(-]nd</code><em>e()n((#(``r#a]nc</em>![!bdn(!edb] ]!`b_ne(d</em>(# _]#nc!)#]</em>]n&gt;!&gt;)raa_)a)cb[\ bec*#()[_(c&gt;(<code>b\_\c\ca]</code>&gt;#c r!a[ene<code>[c</code>(n--rc#&gt;<code>nbd(][*&gt;-\_-e*n#!d\)_- [rdnb-_d\da nbc[</code></p>
+
+=== DIVERGENCE #35 (run 794) ===
+INPUT: a\bc[e)-r`ab\b*]a*n )d#(\nc>_d`\*`r]a(\aa>[c!-aac_d#rcc]!erbc*dr!># (ec *_#\br>_#_((ab_\\[#r)ee_`!a_*[rr#\[\#[n-`b`d(nrdd#*[ *-)_)\]n#
+RUST:  <p>a\bc[e)-r<code>ab\b*]a*n )d#(\nc&gt;_d</code>*<code>r]a(\aa&gt;[c!-aac_d#rcc]!erbc*dr!&gt;# (ec *_#\br&gt;_#_((ab_\\[#r)ee_</code>!a_<em>[rr#[#[n-<code>b</code>d(nrdd#</em>[ *-)_)]n#</p>
+NODE:  <p>a\bc[e)-r<code>ab\b*]a*n )d#(\nc&gt;_d</code>*<code>r]a(\aa&gt;[c!-aac_d#rcc]!erbc*dr!&gt;# (ec *_#\br&gt;_#_((ab_\\[#r)ee_</code>!a_*[rr#[#[n-<code>b</code>d(nrdd#*[ *-)_)]n#</p>
+
+=== DIVERGENCE #36 (run 804) ===
+INPUT: e\!babbn( )!c)>*>]abdacb[d[]nac e**_))*\_!dea#ecn] )\r`[r# )b\\*[(bcbc-d\a\\**a\(\*`>a d(>)nbc[nbd]!\)a(edc`-d[*-_bc]!>dcc_r-e>(adc)#]][*]are-a[b`)e! #)\`na>r*d]`en >_c[nd_a-eb_*! -bb\]\(enbc][!n-r>b bdnc c!_n!b]]]))n]n\a\ \n!\eaeec-)](( [d*>#c!c[ba\`_`
+RUST:  <p>e!babbn( )!c)&gt;<em>&gt;]abdacb[d[]nac e**_))</em>_!dea#ecn] )\r<code>[r# )b\\*[(bcbc-d\a\\**a\(\*</code>&gt;a d(&gt;)nbc[nbd]!)a(edc<code>-d[*-_bc]!&gt;dcc_r-e&gt;(adc)#]][*]are-a[b</code>)e! #)`na&gt;r*d]<code>en &gt;_c[nd_a-eb_*! -bb\]\(enbc][!n-r&gt;b bdnc c!_n!b]]]))n]n\a\ \n!\eaeec-)](( [d*&gt;#c!c[ba\</code>_`</p>
+NODE:  <p>e!babbn( )!c)&gt;<em>&gt;]abdacb[d[]nac e</em><em>_))</em>_!dea#ecn] )\r<code>[r# )b\\*[(bcbc-d\a\\**a\(\*</code>&gt;a d(&gt;)nbc[nbd]!)a(edc<code>-d[*-_bc]!&gt;dcc_r-e&gt;(adc)#]][*]are-a[b</code>)e! #)`na&gt;r<em>d]`en &gt;<em>c[nd_a-eb</em></em>! -bb](enbc][!n-r&gt;b bdnc c!_n!b]]]))n]n\a\ \n!\eaeec-)](( [d*&gt;#c!c[ba`_`</p>
+
+=== DIVERGENCE #37 (run 867) ===
+INPUT: >->b*_>) )r\er a*cr([r]-c`]r_ad[](`(adn[d-!\_\_* \eerd \>*>n`ndn(c[b_ \ \)n>r\ebd -r]>\_ea#e`be dd>`c[rd(>_\d*-#\#ea(c*b[(en`!_)_n`  #``n()[)_#>_a\[n> bc!a>[>a)r#->) )\]ra)*a*`c\n!_\!)_n`b\`!d->\n]*e_`[e]#_)b`a>>b-`_b_ e(\! a)e`>r]d[ccn\!*#_)` *)d`>_#
+RUST:  <blockquote>
+<p>-&gt;b*<em>&gt;) )r\er a<em>cr([r]-c<code>]r_ad[](</code>(adn[d-!__</em> \eerd &gt;*&gt;n<code>ndn(c[b_ \ \)n&gt;r\ebd -r]&gt;\_ea#e</code>be dd&gt;<code>c[rd(&gt;_\d*-#\#ea(c*b[(en</code>!</em>)<em>n<code>  #``n()[)_#&gt;_a\[n&gt; bc!a&gt;[&gt;a)r#-&gt;) )\]ra)*a*</code>c\n!</em>!)<em>n<code>b\</code>!d-&gt;\n]*e</em><code>[e]#_)b</code>a&gt;&gt;b-<code>_b_ e(\! a)e</code>&gt;r]d[ccn!*#<em>)<code> *)d</code>&gt;</em>#</p>
+</blockquote>
+NODE:  <blockquote>
+<p>-&gt;b*_&gt;) )r\er a<em>cr([r]-c<code>]r_ad[](</code>(adn[d-!__</em> \eerd &gt;*&gt;n<code>ndn(c[b_ \ \)n&gt;r\ebd -r]&gt;\_ea#e</code>be dd&gt;<code>c[rd(&gt;_\d*-#\#ea(c*b[(en</code>!<em>)<em>n<code>  #``n()[)_#&gt;_a\[n&gt; bc!a&gt;[&gt;a)r#-&gt;) )\]ra)*a*</code>c\n!</em>!)<em>n<code>b\</code>!d-&gt;\n]*e</em><code>[e]#_)b</code>a&gt;&gt;b-<code>_b_ e(\! a)e</code>&gt;r]d[ccn!*#</em>)<code> *)d</code>&gt;_#</p>
+</blockquote>
+
+=== DIVERGENCE #38 (run 868) ===
+INPUT: `*)e(\][r\c\c!_ -[\-]*n`eb[[\`*n>\e# [[])![cb>\-e_\)d!_#![(`d)*\>)\*##\r`((-!*`b!)\ r*!ra( >c-c*b(*\`#\\n!b]#e[en\`nra)r*#cd
+RUST:  <p><code>*)e(\][r\c\c!_ -[\-]*n</code>eb[[`<em>n&gt;\e# [[])![cb&gt;-e_)d!_#![(<code>d)*\&gt;)\*##\r</code>((-!</em><code>b!)\ r*!ra( &gt;c-c*b(*\</code>#\n!b]#e[en`nra)r*#cd</p>
+NODE:  <p><code>*)e(\][r\c\c!_ -[\-]*n</code>eb[[`<em>n&gt;\e# [[])![cb&gt;-e_)d!_#![(`d)</em>&gt;)*##\r<code>((-!*</code>b!)\ r*!ra( &gt;c-c<em>b(</em>`#\n!b]#e[en`nra)r*#cd</p>
+
+=== DIVERGENCE #39 (run 876) ===
+INPUT: [na)`_[\d\e!*>>bc_)*[_-(r#cr(-dded-_d]]`-d\`\\[>\a(de)*`(cd*]ed\\#\[a*\[ r_#!(ec c!*([r#c_(*_-!r)-!r-#!eb)arr*n*\]\\!e\*)[>-nr\)>`r\*-!!`c#>#\ >n>r>]*]_a]`>>c]>e>#e[(!``\r``d-)_>ecc*>rn#!!r#][d*([\#>\* `))`\>!
+RUST:  <p>[na)<code>_[\d\e!*&gt;&gt;bc_)*[_-(r#cr(-dded-_d]]</code>-d`\[&gt;\a(de)<em><code>(cd*]ed\\#\[a*\[ r_#!(ec c!*([r#c_(*_-!r)-!r-#!eb)arr*n*\]\\!e\*)[&gt;-nr\)&gt;</code>r*-!!<code>c#&gt;#\ &gt;n&gt;r&gt;]*]_a]</code>&gt;&gt;c]&gt;e&gt;#e[(!<code>\r</code>d-)_&gt;ecc</em>&gt;rn#!!r#][d*([#&gt;* <code>))</code>&gt;!</p>
+NODE:  <p>[na)<code>_[\d\e!*&gt;&gt;bc_)*[_-(r#cr(-dded-_d]]</code>-d`\[&gt;\a(de)<em>`(cd</em>]ed\#[a*[ r_#!(ec c!<em>([r#c_(</em>_-!r)-!r-#!eb)arr<em>n</em>]\!e*)[&gt;-nr)&gt;<code>r\*-!!</code>c#&gt;#\ &gt;n&gt;r&gt;]*]_a]<code>&gt;&gt;c]&gt;e&gt;#e[(!``\r``d-)_&gt;ecc*&gt;rn#!!r#][d*([\#&gt;\* </code>))`&gt;!</p>
+
+=== DIVERGENCE #40 (run 916) ===
+INPUT: nne\-\!)!->*dd)\dac>d!\e!\b]c[\e]#`>a\ce]>n!#!!ca(()r [)_! [\)[*>)[c>>b`nr#b[c>[a)d!e\re*rb](-r[-r(n)`nn \`\e_[eb[_>)\db]->#d(\`(#n[da))_r-!*_)`dn\b \#[*[*b*#-r)!e\#!ae!* )`*!#_aa(`[aca]d_>na -[`\[)`\)a`c! `)*\r_a\!!\>ce*\)e>`>e`)(rr\a
+RUST:  <p>nne-!)!-&gt;<em>dd)\dac&gt;d!\e!\b]c[\e]#<code>&gt;a\ce]&gt;n!#!!ca(()r [)_! [\)[*&gt;)[c&gt;&gt;b</code>nr#b[c&gt;<a href="-r%5B-r(n">a)d!e\re*rb</a><code>nn \</code>\e_[eb[_&gt;)\db]-&gt;#d(`(#n[da))_r-!</em>_)<code>dn\b \#[*[*b*#-r)!e\#!ae!* )</code>*!#_aa(<code>[aca]d_&gt;na -[</code>[)<code>\)a</code>c! <code>)*\r_a\!!\&gt;ce*\)e&gt;</code>&gt;e`)(rr\a</p>
+NODE:  <p>nne-!)!-&gt;<em>dd)\dac&gt;d!\e!\b]c[\e]#<code>&gt;a\ce]&gt;n!#!!ca(()r [)_! [\)[*&gt;)[c&gt;&gt;b</code>nr#b[c&gt;[a)d!e\re</em>rb](-r[-r(n)<code>nn \</code>\e_[eb[<em>&gt;)\db]-&gt;#d(`(#n[da))_r-!<em>_)`dn\b #[</em>[<em>b</em>#-r)!e#!ae!* )<code>*!#_aa(</code>[aca]d</em>&gt;na -[<code>\[)</code>)a<code>c! </code>)<em>\r_a!!&gt;ce</em>)e&gt;<code>&gt;e</code>)(rr\a</p>
+
+=== DIVERGENCE #41 (run 931) ===
+INPUT: ecb>a#abr>c[-)ne-](_ecd n``>*`e((dcr!>)d-c\]e\#c[(*a #``_*#c-d* #rc\\*n( >e\[\!-`[d#`)!a]e\*e\>c`(`d!-c`\r\>c!`#c*_\-a)]\__dba -[)!>-#cd[!_-_-b c#]b))db b\#b#[\e)d!>e (( \
+RUST:  <p>ecb&gt;a#abr&gt;c[-)ne-](<em>ecd n<code>&gt;*`e((dcr!&gt;)d-c\]e\#c[(*a #</code></em><em>#c-d</em> #rc\<em>n( &gt;e[!-<code>[d#</code>)!a]e*e&gt;c<code>(</code>d!-c<code>\r\&gt;c!</code>#c</em><em>-a)]_<em>dba -[)!&gt;-#cd[!</em>-</em>-b c#]b))db b#b#[\e)d!&gt;e (( \</p>
+NODE:  <p>ecb&gt;a#abr&gt;c[-)ne-](<em>ecd n<code>&gt;*`e((dcr!&gt;)d-c\]e\#c[(*a #</code>_<em>#c-d* #rc\*n( &gt;e[!-<code>[d#</code>)!a]e*e&gt;c<code>(</code>d!-c<code>\r\&gt;c!</code>#c</em></em>-a)]_<em>dba -[)!&gt;-#cd[!</em>-_-b c#]b))db b#b#[\e)d!&gt;e (( \</p>
+
+=== DIVERGENCE #42 (run 934) ===
+INPUT: ]` cb!_`d>\b)r>#`#)!*](>*]r\\b\!\!])`#a-n`_*e#c>r\n*]_#](d*[b cd]c#eenn>\aa #cc!nbrd-[\(ec-[nn]>\n ##` )-n(- -]r##)`cb>\a>(d(ec(-*cn`_[(]`b\nr]r#*!a>[ncb(r\!\\da\# -[]d) r][-\r(abd>\_b\_!#cnd -r#]_d>b_b
+RUST:  <p>]<code> cb!_</code>d&gt;\b)r&gt;#<code>#)!*](&gt;*]r\\b\!\!])</code>#a-n<code>_*e#c&gt;r\n*]_#](d*[b cd]c#eenn&gt;\aa #cc!nbrd-[\(ec-[nn]&gt;\n ##</code> )-n(- -]r##)<code>cb&gt;\a&gt;(d(ec(-*cn</code>_[(]`b\nr]r#*!a&gt;[ncb(r\!\\da\# -[]d) r][-\r(abd&gt;<em>b</em>!#cnd -r#]_d&gt;b_b</p>
+NODE:  <p>]<code> cb!_</code>d&gt;\b)r&gt;#<code>#)!*](&gt;*]r\\b\!\!])</code>#a-n<code>_*e#c&gt;r\n*]_#](d*[b cd]c#eenn&gt;\aa #cc!nbrd-[\(ec-[nn]&gt;\n ##</code> )-n(- -]r##)<code>cb&gt;\a&gt;(d(ec(-*cn</code>_[(]`b\nr]r#*!a&gt;[ncb(r!\da# -[]d) r][-\r(abd&gt;_b_!#cnd -r#]_d&gt;b_b</p>
+
+=== DIVERGENCE #43 (run 940) ===
+INPUT: )d)*-`]\(\\!)a  a#-db[*`n>\`d_#cebab! !e!)#\ n\[_(an! aedd)nd!*#`e_#*>#a!b\c*dc`cn#a_--(#>)n)\)#\(d-a rd]#\)db` *[[#[]b ]adbe\-(r]r[ -`a -\`**!](b*(c-#]*e-(\-#``d\]n  _( d` e[c>)#*ae>`)ac(!e`\!
+RUST:  <p>)d)<em>-<code>]\(\\!)a  a#-db[*</code>n&gt;`d_#cebab! !e!)#\ n[_(an! aedd)nd!</em>#<code>e_#*&gt;#a!b\c*dc</code>cn#a_--(#&gt;)n))#(d-a rd]#)db<code> *[[#[]b ]adbe\-(r]r[ -</code>a -`**!](b*(c-#]*e-(-#``d]n  _( d<code> e[c&gt;)#*ae&gt;</code>)ac(!e`!</p>
+NODE:  <p>)d)<em>-<code>]\(\\!)a  a#-db[*</code>n&gt;`d_#cebab! !e!)#\ n[<em>(an! aedd)nd!*#`e</em>#</em>&gt;#a!b\c*dc<code>cn#a_--(#&gt;)n)\)#\(d-a rd]#\)db</code> <em>[[#[]b ]adbe-(r]r[ -<code>a -\</code>**!](b</em>(c-#]*e-(-#``d]n  _( d<code> e[c&gt;)#*ae&gt;</code>)ac(!e`!</p>
+
+=== DIVERGENCE #44 (run 962) ===
+INPUT: >cer*>!a(_ na(] e>`e*\rn[ar`(\[\[b_rae\#a``-crd\e[>#-#`d-[-)*]`d]#dn-![>`*acrd>[ac`__d-[]_d*b)b_**]-#!_ea\(b!d(]a>ab \*!a\r)dcc>`c**_n>*!#*er-!b[ \[]*\>*> r)]nc!(-*\**c]\[c)-cer`r*\\`ncn]`r-\\*#rea*#daen(a)(\e\cdbbc(**\!**)#cb!\reeae_#en
+RUST:  <blockquote>
+<p>cer*&gt;!a(_ na(] e&gt;<code>e*\rn[ar</code>([[b_rae#a``-crd\e[&gt;#-#<code>d-[-)*]</code>d]#dn-![&gt;<code>*acrd&gt;[ac</code>_<em>d-[]<em>d*b)b</em><strong>]-#!_ea(b!d(]a&gt;ab *!a\r)dcc&gt;<code>c**_n&gt;*!#*er-!b[ \[]*\&gt;*&gt; r)]nc!(-*\**c]\[c)-cer</code>r*\<code>ncn]</code>r-\<em>#rea</em>#daen(a)(\e\cdbbc(</strong>!**)#cb!\reeae</em>#en</p>
+</blockquote>
+NODE:  <blockquote>
+<p>cer*&gt;!a(_ na(] e&gt;<code>e*\rn[ar</code>([[b_rae#a``-crd\e[&gt;#-#<code>d-[-)*]</code>d]#dn-![&gt;<code>*acrd&gt;[ac</code>__d-[]<em>d*b)b</em><em><em>]-#!_ea(b!d(]a&gt;ab *!a\r)dcc&gt;<code>c**_n&gt;*!#*er-!b[ \[]*\&gt;*&gt; r)]nc!(-*\**c]\[c)-cer</code>r</em>\<code>ncn]</code>r-\*#rea</em>#daen(a)(\e\cdbbc(<strong>!</strong>)#cb!\reeae_#en</p>
+</blockquote>
+
+=== DIVERGENCE #45 (run 971) ===
+INPUT: \)] >-b\r( \>r_*\c>(*>`)b c[\`d#>)_\-r(\*#![[c#_ ()-[!>a )d!_()- \ *]d>* e\c!!rd>!])!c*!`(a#(n\b[!are!d]#e `\*e\#e
+RUST:  <p>)] &gt;-b\r( &gt;r_<em>\c&gt;(</em>&gt;<code>)b c[\</code>d#&gt;)<em>-r(*#![[c#</em> ()-[!&gt;a )d!_()- \ <em>]d&gt;</em> e\c!!rd&gt;!])!c*!<code>(a#(n\b[!are!d]#e </code>*e#e</p>
+NODE:  <p>)] &gt;-b\r( &gt;r_*\c&gt;(<em>&gt;<code>)b c[\</code>d#&gt;)<em>-r(*#![[c#</em> ()-[!&gt;a )d!_()- \ <em>]d&gt;</em> e\c!!rd&gt;!])!c</em>!<code>(a#(n\b[!are!d]#e </code>*e#e</p>
+
+=== DIVERGENCE #46 (run 985) ===
+INPUT: ]n`)b-\c\ba nr#>c)[a_!_][\*!n\!_\(\-_r_cn#>!ar#>!\_`[bb\b`#rb) )b[)\!d`>nn #(\-r!\\]]d!\--)ar!>!-)>nb]n!b)a\n*_*n#\\>)b\)cd!e  \c-a#\e)`\d(_]-a!n\ndd]db!dcr !c)]!!ra#`r\- b]c_>`! brr(>\!-c )a*[d)
+RUST:  <p>]n<code>)b-\c\ba nr#&gt;c)[a_!_][\*!n\!_\(\-_r_cn#&gt;!ar#&gt;!\_</code>[bb\b<code>#rb) )b[)\!d</code>&gt;nn #(-r!\]]d!--)ar!&gt;!-)&gt;nb]n!b)a\n*<em>*n#\&gt;)b)cd!e  \c-a#\e)<code>\d(_]-a!n\ndd]db!dcr !c)]!!ra#</code>r- b]c</em>&gt;`! brr(&gt;!-c )a*[d)</p>
+NODE:  <p>]n<code>)b-\c\ba nr#&gt;c)[a_!_][\*!n\!_\(\-_r_cn#&gt;!ar#&gt;!\_</code>[bb\b<code>#rb) )b[)\!d</code>&gt;nn #(-r!\]]d!--)ar!&gt;!-)&gt;nb]n!b)a\n*_<em>n#\&gt;)b)cd!e  \c-a#\e)<code>\d(_]-a!n\ndd]db!dcr !c)]!!ra#</code>r- b]c_&gt;`! brr(&gt;!-c )a</em>[d)</p>
+
+=== DIVERGENCE #47 (run 992) ===
+INPUT: \r\(##(b[#]c\\#\r>-n >-])\-![ e\rndc* -]- [)_`d##]\c`>\cebd>ra``#\\ebr[ \]d]`\])r-_#!!]b> [)[be\err en\cc> [[a\#>]]*#`>-(_[-r#c\#\#c>-)ar\ *\>]>dr_-`>>[> _-r`!*d> >)\)-(#\#` !_\!`-e)\)\nb>\` \-d eb\-`d\_ -_!b>)n)_>_!)#dba\#eb(!a#()a*[da!\c a\[!!a__>[a!>[[b_*]c[>*][)`>-b#
+RUST:  <p>\r(##(b[#]c\#\r&gt;-n &gt;-])-![ e\rndc* -]- [)<em><code>d##]\c</code>&gt;\cebd&gt;ra``#\ebr[ ]d]<code>\])r-_#!!]b&gt; [)[be\err en\cc&gt; [[a\#&gt;]]*#</code>&gt;-(</em>[-r#c##c&gt;-)ar\ *&gt;]&gt;dr_-<code>&gt;&gt;[&gt; _-r</code>!*d&gt; &gt;))-(##<code> !_\!</code>-e))\nb&gt;` -d eb-<code>d\_ -_!b&gt;)n)_&gt;_!)#dba\#eb(!a#()a*[da!\c a\[!!a__&gt;[a!&gt;[[b_*]c[&gt;*][)</code>&gt;-b#</p>
+NODE:  <p>\r(##(b[#]c\#\r&gt;-n &gt;-])-![ e\rndc* -]- [)<em><code>d##]\c</code>&gt;\cebd&gt;ra``#\ebr[ ]d]<code>\])r-_#!!]b&gt; [)[be\err en\cc&gt; [[a\#&gt;]]*#</code>&gt;-(</em>[-r#c##c&gt;-)ar\ <em>&gt;]&gt;dr_-<code>&gt;&gt;[&gt; _-r</code>!<em>d&gt; &gt;))-(##<code> !_\!</code>-e))\nb&gt;` -d eb-`d_ -<em>!b&gt;)n)</em>&gt;_!)#dba#eb(!a#()a</em>[da!\c a[!!a__&gt;[a!&gt;[[b_</em>]c[&gt;*][)`&gt;-b#</p>
+
+=== DIVERGENCE #48 (run 1009) ===
+INPUT: \*\(--na]\>-na]>!)!`)bra ]\]!(n!#])_-nr!- *b*\\*a\acn\-[nb [bcba dd\\ )a*#[de*\r_- c_ae!crne\)]>>`b-\e>`#`d)\ n>)`_\n(rdcb*![\*!r([_*\)c \ >\*`\!d_-e*_>)[!]d!->b\-nd]!bc-d[*-aa_\(bc#(_--`n*!rre) #_n\r`>n\*`-(]>*_\\ea)\n*a\cr_c b>__c)cc-]`( _b !-n!ed bc_\cb*!
+RUST:  <p>*(--na]&gt;-na]&gt;!)!<code>)bra ]\]!(n!#])_-nr!- *b*\\*a\acn\-[nb [bcba dd\\ )a*#[de*\r_- c_ae!crne\)]&gt;&gt;</code>b-\e&gt;<code>#</code>d)\ n&gt;)<code>_\n(rdcb*![\*!r([_*\)c \ &gt;\*</code>!d_-e*<em>&gt;)[!]d!-&gt;b-nd]!bc-d[*-aa</em>(bc#(_--<code>n*!rre) #_n\r</code>&gt;n*<code>-(]&gt;*_\\ea)\n*a\cr_c b&gt;__c)cc-]</code>( <em>b !-n!ed bc</em>\cb*!</p>
+NODE:  <p>*(--na]&gt;-na]&gt;!)!<code>)bra ]\]!(n!#])_-nr!- *b*\\*a\acn\-[nb [bcba dd\\ )a*#[de*\r_- c_ae!crne\)]&gt;&gt;</code>b-\e&gt;<code>#</code>d)\ n&gt;)<code>_\n(rdcb*![\*!r([_*\)c \ &gt;\*</code>!d_-e*_&gt;)[!]d!-&gt;b-nd]!bc-d[<em>-aa_(bc#(_--<code>n*!rre) #_n\r</code>&gt;n*<code>-(]&gt;*_\\ea)\n*a\cr_c b&gt;__c)cc-]</code>( <em>b !-n!ed bc</em>\cb</em>!</p>
+
+=== DIVERGENCE #49 (run 1014) ===
+INPUT: _!!e[)\an]\d ! ]_``\`r_bd`# _dr) -`!a-d#!(*e#a>r (b`_[n[an-c[bae)]*]#c!]!d b \n*-` \r[*>!_\[#`c ]\[`)]a>\`#\)#r*)#b\-cc\c*r[*\)\[**\-r>*c(-)(]]`-]\*cd))d\bbe-n)!>rr_ba##_)!#>n-]\a\dee>(#e))bde_\_b(][ )e[nb
+RUST:  <p><em>!!e[)\an]\d ! ]</em>```r_bd<code># _dr) -</code>!a-d#!(<em>e#a&gt;r (b<code>_[n[an-c[bae)]*]#c!]!d b \n*-</code> \r[</em>&gt;!<em>[#<code>c ]\[</code>)]a&gt;`#)#r*)#b-cc\c<em>r[</em>)[**-r&gt;*c(-)(]]`-]*cd))d\bbe-n)!&gt;rr_ba##</em>)!#&gt;n-]\a\dee&gt;(#e))bde__b(][ )e[nb</p>
+NODE:  <p><em>!!e[)\an]\d ! ]</em>```r_bd<code># _dr) -</code>!a-d#!(<em>e#a&gt;r (b`_[n[an-c[bae)]</em>]#c!]!d b \n*-<code> \r[*&gt;!_\[#</code>c ][<code>)]a&gt;\</code>#)#r*)#b-cc\c<em>r[</em>)[**-r&gt;*c(-)(]]`-]*cd))d\bbe-n)!&gt;rr_ba##<em>)!#&gt;n-]\a\dee&gt;(#e))bde</em>_b(][ )e[nb</p>
+
+=== DIVERGENCE #50 (run 1017) ===
+INPUT: d `[(*!`\\) !]d[*#[- \\\a#\bnbra)-rea-c**b(nc( d[[# a*#e[!#)( _!n((] a#dnn`\]c`\``#bn \()a\_!ra#!_ #>a*_c)[*d>-]\\!\#(#a[)*-*`rddar!-(]]_!)- ]e\n-\!a->_!(rr_[*_*[c!\d-b>a\nc#ac_>_`rc!c*\](\ ``\-n\cc-e`n]]r)>]c_br#(r_(na\\(-b#)\n-[e(()r_``>(>br(\dnc\_nn_b(de- b
+RUST:  <p>d <code>[(*!</code>\) !]d[<em>#[- \\a#\bnbra)-rea-c**b(nc( d[[# a</em>#e[!#)( <em>!n((] a#dnn<code>\]c</code>`<code>#bn \()a\_!ra#!_ #&gt;a*_c)[*d&gt;-]\\!\#(#a[)*-*</code>rddar!-(]]</em>!)- ]e\n-!a-&gt;<em>!(rr</em>[<em>_</em>[c!\d-b&gt;a\nc#ac_&gt;<em><code>rc!c*\](\ ``\-n\cc-e</code>n]]r)&gt;]c_br#(r</em>(na\(-b#)\n-[e(()r_``&gt;(&gt;br(\dnc_nn_b(de- b</p>
+NODE:  <p>d <code>[(*!</code>\) !]d[<em>#[- \\a#\bnbra)-rea-c**b(nc( d[[# a</em>#e[!#)( <em>!n((] a#dnn<code>\]c</code>``#bn ()a_!ra#!</em> #&gt;a*_c)[<em>d&gt;-]\!#(#a[)</em>-<em><code>rddar!-(]]_!)- ]e\n-\!a-&gt;_!(rr_[*_*[c!\d-b&gt;a\nc#ac_&gt;_</code>rc!c</em>](\ <code>\-n\cc-e`n]]r)&gt;]c_br#(r_(na\\(-b#)\n-[e(()r_</code>&gt;(&gt;br(\dnc_nn_b(de- b</p>
+
+=== DIVERGENCE #51 (run 1022) ===
+INPUT: d`er)\a*_#>na db\>]c[n! \rr\b_] `n>  ]drder(b\]*n \!#(#\r e_*))\\\ ]!\`b rc]]!)da#c>[)_]d\\cnea\*))*a((ce]> c))b*da\ eda [n ]`]-b-*-!!`-#!b`b\a>]`-]]\]
+RUST:  <p>d<code>er)\a*_#&gt;na db\&gt;]c[n! \rr\b_] </code>n&gt;  ]drder(b]<em>n !#(#\r e_</em>))\\ ]!`b rc]]!)da#c&gt;[)_]d\cnea*))<em>a((ce]&gt; c))b</em>da\ eda [n ]<code>]-b-*-!!</code>-#!b<code>b\a&gt;]</code>-]]]</p>
+NODE:  <p>d<code>er)\a*_#&gt;na db\&gt;]c[n! \rr\b_] </code>n&gt;  ]drder(b]<em>n !#(#\r e_</em>))\\ ]!`b rc]]!)da#c&gt;[)_]d\cnea*))<em>a((ce]&gt; c))b*da\ eda [n ]`]-b-</em>-!!<code>-#!b</code>b\a&gt;]`-]]]</p>
+
+=== DIVERGENCE #52 (run 1046) ===
+INPUT: (_]-)e] >-*r-\d)ccbrn)* d> )_>\d_*dd\>ee>rn]_# d**_c*> *ree]b!!b-[ne[*]-r[a`*)[!\*\*!en-cne)d\_en-r*\#e * c**e`n_-b-!e_`!_\c_r[__ n)>an\-]]d*>n** \]de)`r]>a(_dd#(_(da([beb)`#((r>rr!*[)cc(![(*[d\ # *\-#br*bb-[e_
+RUST:  <p>(<em>]-)e] &gt;-<em>r-\d)ccbrn)</em> d&gt; )</em>&gt;\d_<em>dd&gt;ee&gt;rn]_# d</em>*<em>c*&gt; <em>ree]b!!b-[ne[</em>]-r[a<code>*)[!\*\*!en-cne)d\_en-r*\#e * c**e</code>n</em>-b-!e_<code>!_\c_r[__ n)&gt;an\-]]d*&gt;n** \]de)</code>r]&gt;a(<em>dd#(</em>(da([beb)`#((r&gt;rr!<em>[)cc(![(</em>[d\ # <em>-#br</em>bb-[e_</p>
+NODE:  <p>(<em>]-)e] &gt;-<em>r-\d)ccbrn)</em> d&gt; )</em>&gt;\d_<em>dd&gt;ee&gt;rn]_# d</em><em>_c</em>&gt; <em>ree]b!!b-[ne[</em>]-r[a<code>*)[!\*\*!en-cne)d\_en-r*\#e * c**e</code>n_-b-!e_<code>!_\c_r[__ n)&gt;an\-]]d*&gt;n** \]de)</code>r]&gt;a(<em>dd#(</em>(da([beb)`#((r&gt;rr!<em>[)cc(![(</em>[d\ # <em>-#br</em>bb-[e_</p>
+
+=== DIVERGENCE #53 (run 1054) ===
+INPUT: c[\]>e`\rc\ c>!ec_ ##)\`c!ra(-dcd*] `_dee[b(c>_a_! `d`d\n\#!]cc[(r* d `d]**bn()`\)_`*`c\c#*(n)*_cn]!`\bb*>dn#\rb!`!#>`\d_r(n[_e c**>! r _r*c-*]\`(-r]-)-*\))cd##()c-bnna->!)r``b_ n(e-d\(! #[##n!_n#(a>r[>>>`baar*( ) r\bd_aebabn( abc\\rd\a`*`e\r-[((n_)d\]b>[abc!adn]>])\>\[\a#]>`-(!drnn_[eb\_\\n>! ]n
+RUST:  <p>c[]&gt;e<code>\rc\ c&gt;!ec_ ##)\</code>c!ra(-dcd*] <code>_dee[b(c&gt;_a_! </code>d<code>d\n\#!]cc[(r* d </code>d]<strong>bn()<code>\)_</code><em><code>c\c#*(n)*_cn]!</code>\bb</em>&gt;dn#\rb!<code>!#&gt;</code>\d_r(n[_e c</strong>&gt;! r <em>r<em>c-</em>]`(-r]-)-*))cd##()c-bnna-&gt;!)r``b</em> n(e-d(! #[##n!<em>n#(a&gt;r[&gt;&gt;&gt;<code>baar*( ) r\bd_aebabn( abc\\rd\a</code>*<code>e\r-[((n_)d\]b&gt;[abc!adn]&gt;])\&gt;\[\a#]&gt;</code>-(!drnn</em>[eb_\n&gt;! ]n</p>
+NODE:  <p>c[]&gt;e<code>\rc\ c&gt;!ec_ ##)\</code>c!ra(-dcd*] <code>_dee[b(c&gt;_a_! </code>d<code>d\n\#!]cc[(r* d </code>d]<strong>bn()<code>\)_</code><em><code>c\c#*(n)*_cn]!</code>\bb</em>&gt;dn#\rb!<code>!#&gt;</code>\d_r(n[_e c</strong>&gt;! r <em>r<em>c-</em>]`(-r]-)-<em>))cd##()c-bnna-&gt;!)r``b_ n(e-d(! #[##n!_n#(a&gt;r[&gt;&gt;&gt;`baar</em>( ) r\bd_aebabn( abc\rd\a<code>*</code>e\r-[((n</em>)d]b&gt;[abc!adn]&gt;])&gt;[\a#]&gt;`-(!drnn_[eb_\n&gt;! ]n</p>
+
+=== DIVERGENCE #54 (run 1056) ===
+INPUT: !>\>!)`cr!_-r\!((c`n#(\n\] #nen)ba]d\dn#(*]n>\`\b  )c_#(]d]\r>[>_\b!>an(cc>b` -# bre*)*n\#`dcc\-drn  d[(]_ 
+RUST:  <p>!&gt;&gt;!)<code>cr!_-r\!((c</code>n#(\n] #nen)ba]d\dn#(*]n&gt;`\b  )c_#(]d]\r&gt;[&gt;<em>\b!&gt;an(cc&gt;b<code> -# bre*)*n\#</code>dcc-drn  d[(]</em> </p>
+NODE:  <p>!&gt;&gt;!)<code>cr!_-r\!((c</code>n#(\n] #nen)ba]d\dn#(<em>]n&gt;`\b  )c_#(]d]\r&gt;[&gt;_\b!&gt;an(cc&gt;b` -# bre</em>)*n#`dcc-drn  d[(]_ </p>
+
+=== DIVERGENCE #55 (run 1066) ===
+INPUT: ]_`!!d*\\ a)d#ae`[**) [()*`>()\ae_ n(*b!de\cc)*!a)nee > n]-)`>d)_dr\bd-`#b\)d\[`e er-#a#e\(\>)c!# nb[))->(*a>d*` \`\>]>( d((c(c dc)r\]_d[_\*nb!#[]!!>\- adec\ean)>eb]\`!_>[[n])(a\[)b*[\\de#b\\)d)ac (_[_ !!(c\*>e [!cd-*[[)_d\#aa!_n_`[nd]__e>#_c\[_\dda\(`#)>>r#n\d)[r#r_a[!`#[dd [_rd\b[
+RUST:  <p>]<em><code>!!d*\\ a)d#ae</code>[**) [()<em><code>&gt;()\ae_ n(*b!de\cc)*!a)nee &gt; n]-)</code>&gt;d)<em>dr\bd-<code>#b\)d\[</code>e er-#a#e(&gt;)c!# nb[))-&gt;(<em>a&gt;d</em><code> \</code>&gt;]&gt;( d((c(c dc)r]<em>d[</em>*nb!#[]!!&gt;- adec\ean)&gt;eb]`!</em>&gt;[[n])(a[)b</em>[\de#b\)d)ac (</em>[_ !!(c*&gt;e [!cd-*[[)_d#aa!<em>n</em><code>[nd]__e&gt;#_c\[_\dda\(</code>#)&gt;&gt;r#n\d)[r#r_a[!`#[dd [_rd\b[</p>
+NODE:  <p>]_<code>!!d*\\ a)d#ae</code>[**) [()*<code>&gt;()\ae_ n(*b!de\cc)*!a)nee &gt; n]-)</code>&gt;d)_dr\bd-<code>#b\)d\[</code>e er-#a#e(&gt;)c!# nb[))-&gt;(<em>a&gt;d</em><code> \</code>&gt;]&gt;( d((c(c dc)r]<em>d[</em>*nb!#[]!!&gt;- adec\ean)&gt;eb]`!_&gt;[[n])(a[)b*[\de#b\)d)ac (_[_ !!(c*&gt;e [!cd-*[[)_d#aa!_n_<code>[nd]__e&gt;#_c\[_\dda\(</code>#)&gt;&gt;r#n\d)[r#r_a[!`#[dd [_rd\b[</p>
+
+=== DIVERGENCE #56 (run 1085) ===
+INPUT: b* #-]!- d_drda]ec a>r#n[\`*(>!rre-acn ! c*(!\(--aa\\)!`_e**)\n*n*>!r! \b)r\b !)n)!derrd-] n[nnc#cc`_n c(]> e)rd*#>e_a*e\>r`#a-\a(_*-[#)! #dn_ a\_rr-[-`*][!e!(!a](>(r(!\da!(r[e!``)dn_r>e`>!>(#!_!c
+RUST:  <p>b* #-]!- d_drda]ec a&gt;r#n[`<em>(&gt;!rre-acn ! c</em>(!(--aa\)!<code>_e**)\n*n*&gt;!r! \b)r\b !)n)!derrd-] n[nnc#cc</code><em>n c(]&gt; e)rd*#&gt;e_a<em>e&gt;r<code>#a-\a(_*-[#)! #dn_ a\_rr-[-</code></em>]<a href="%3E(r(!%5Cda!(r%5Be!%60%60">!e!(!a</a>dn_r&gt;e`&gt;!&gt;(#!</em>!c</p>
+NODE:  <p>b* #-]!- d_drda]ec a&gt;r#n[`<em>(&gt;!rre-acn ! c*(!(--aa\)!`_e</em><em>)\n</em>n*&gt;!r! \b)r\b !)n)!derrd-] n[nnc#cc<code>_n c(]&gt; e)rd*#&gt;e_a*e\&gt;r</code>#a-\a(<em>*-[#)! #dn</em> a_rr-[-<code>*][!e!(!a](&gt;(r(!\da!(r[e!``)dn_r&gt;e</code>&gt;!&gt;(#!_!c</p>
+
+=== DIVERGENCE #57 (run 1128) ===
+INPUT: *\[a\rer__)\c(\[n #\(reb\[!]!`b#r[n\ a#de(\e`()>*_\(_](`)-n)a\a\d]a \d!ae!(]  > \#c(\\`]>>]c-![nbrn\a#d\! *\]n[ce#-nddr])__)c-\_\_\*n\(]n dbae[d[*c(\)>)bd`>c [_c)radb`#r!\den(c#e`>>>- a\a b)rb>\a(--\` [*>_](#a)b]*((r)-nrr> -)(]!c -
+RUST:  <p><em>[a\rer__)\c([n #(reb[!]!<code>b#r[n\ a#de(\e</code>()&gt;</em><em>(</em>](<code>)-n)a\a\d]a \d!ae!(]  &gt; \#c(\\</code>]&gt;&gt;]c-![nbrn\a#d! *]n[ce#-nddr])__)c-__*n(]n dbae[d[*c()&gt;)bd<code>&gt;c [_c)radb</code>#r!\den(c#e<code>&gt;&gt;&gt;- a\a b)rb&gt;\a(--\</code> <a href="#a)b%5D*((r">*&gt;_</a>-nrr&gt; -)(]!c -</p>
+NODE:  <p><em>[a\rer__)\c([n #(reb[!]!<code>b#r[n\ a#de(\e</code>()&gt;</em><em>(</em>](<code>)-n)a\a\d]a \d!ae!(]  &gt; \#c(\\</code>]&gt;&gt;]c-![nbrn\a#d! *]n[ce#-nddr])__)c-__*n(]n dbae[d[<em>c()&gt;)bd<code>&gt;c [_c)radb</code>#r!\den(c#e<code>&gt;&gt;&gt;- a\a b)rb&gt;\a(--\</code> <a href="#a">*&gt;_</a>b]</em>((r)-nrr&gt; -)(]!c -</p>
+
+=== DIVERGENCE #58 (run 1241) ===
+INPUT: ]be*e!*c_>a(!_e#d*>#c \n-!__[ee>#(]([`r()\#)-\[!e-d ]c)\b*er>>*d]d ` )c(r)>n#`(`n#>
+RUST:  <p>]be<em>e!<em>c_&gt;a(!_e#d</em>&gt;#c \n-!__<a href="%5B%60r()#">ee&gt;#(</a>-[!e-d ]c)\b</em>er&gt;&gt;*d]d <code> )c(r)&gt;n#</code>(`n#&gt;</p>
+NODE:  <p>]be*e!<em>c_&gt;a(!_e#d</em>&gt;#c \n-!__<a href="%5B%60r()#">ee&gt;#(</a>-[!e-d ]c)\b*er&gt;&gt;*d]d <code> )c(r)&gt;n#</code>(`n#&gt;</p>
+
+=== DIVERGENCE #59 (run 1266) ===
+INPUT: (-*\d)\`\\a_\r)d*#b_b>)an\[a!`>#cde`r-(#! #`d>\*b[(_c\b-#cd\a\[>*-(a\-> n-\!a\a-*-_#nden#an[!b)r[#b[)rr\_na>-d]n*]#b\]\]*a_)\>r])(( \!d\(ac\_e!)#*a`] \r`b\ c_a>_b`)`ec(r>\>`\d]n`>)r)\[)bbndna]eba# (de)e>\ee`\er#`>\c[>(adbd)n>]`#a# ad>`d\_-`r [_b[))bbd[_-[e> n\!e[c\!)(#rne -r!)n[b(r#(]e__
+RUST:  <p>(-<em>\d)`\a_\r)d</em>#b_b&gt;)an[a!<code>&gt;#cde</code>r-(#! #<code>d&gt;\*b[(_c\b-#cd\a\[&gt;*-(a\-&gt; n-\!a\a-*-_#nden#an[!b)r[#b[)rr\_na&gt;-d]n*]#b\]\]*a_)\&gt;r])(( \!d\(ac\_e!)#*a</code>] \r<code>b\ c_a&gt;_b</code>)<code>ec(r&gt;\&gt;</code>\d]n<code>&gt;)r)\[)bbndna]eba# (de)e&gt;\ee</code>\er#<code>&gt;\c[&gt;(adbd)n&gt;]</code>#a# ad&gt;<code>d\_-</code>r [<em>b[))bbd[</em>-[e&gt; n!e[c!)(#rne -r!)n[b(r#(]e__</p>
+NODE:  <p>(-<em>\d)`\a_\r)d*#b_b&gt;)an[a!<code>&gt;#cde</code>r-(#! #`d&gt;*b[(_c\b-#cd\a[&gt;</em>-(a-&gt; n-!a\a-<em>-_#nden#an[!b)r[#b[)rr_na&gt;-d]n</em>]#b]]*a_)&gt;r])(( !d(ac_e!)#*a<code>] \r</code>b\ c_a&gt;<em>b<code>)</code>ec(r&gt;&gt;<code>\d]n</code>&gt;)r)[)bbndna]eba# (de)e&gt;\ee<code>\er#</code>&gt;\c[&gt;(adbd)n&gt;]<code>#a# ad&gt;</code>d_-`r [<em>b[))bbd[</em>-[e&gt; n!e[c!)(#rne -r!)n[b(r#(]e</em>_</p>
+
+=== DIVERGENCE #60 (run 1273) ===
+INPUT: ec[[-!dn(n[b)(! * (e`([)]a]`))e#*-c#>\\r`-\\[\#\\#n`` -!`\`r)-(_#`n]_[ade_ )_ d#\-n>-`n[
+RUST:  <p>ec[[-!dn(n[b)(! * (e<code>([)]a]</code>))e#*-c#&gt;\r<code>-\\[\#\\#n`` -!</code>`r)-(_#<code>n]_[ade_ )_ d#\-n&gt;-</code>n[</p>
+NODE:  <p>ec[[-!dn(n[b)(! * (e<code>([)]a]</code>))e#*-c#&gt;\r<code>-\\[\#\\#n`` -!</code>`r)-(<em>#`n]</em>[ade_ )_ d#-n&gt;-`n[</p>
+
+=== DIVERGENCE #61 (run 1332) ===
+INPUT: [>db)]ba`_anea_nb>` \\ad][bd ea#b!a#->a\\*rd`d\()b--_-#_#n!\rr`e\-d\c]]aa_rbaeac\a\n\]a#[-*)*n `)bc*cnc[\_]`e(\a[) ]!_[r> \`dc`!\nn# ]d*n [[*cc)an\ [d]_e]a!`\dr([`b_][ra-e! -dd!#)!>_[\_]r[>(e)r)( \!en)a_[[\](c#!`d]>e>a\( #n*>#-)[c\reb(*]\\
+RUST:  <p>[&gt;db)]ba<code>_anea_nb&gt;</code> \ad][bd ea#b!a#-&gt;a\<em>rd<code>d\()b--_-#_#n!\rr</code>e-d\c]]aa_rbaeac\a\n]a#[-</em>)<em>n <code>)bc*cnc[\_]</code>e(\a[) ]!_[r&gt; `dc<code>!\nn# ]d*n [[*cc)an\ [d]_e]a!</code>\dr([<code>b_][ra-e! -dd!#)!&gt;_[\_]r[&gt;(e)r)( \!en)a_[[\](c#!</code>d]&gt;e&gt;a( #n</em>&gt;#-)[c\reb(*]\</p>
+NODE:  <p>[&gt;db)]ba<code>_anea_nb&gt;</code> \ad][bd ea#b!a#-&gt;a\<em>rd<code>d\()b--_-#_#n!\rr</code>e-d\c]]aa_rbaeac\a\n]a#[-</em>)<em>n <code>)bc*cnc[\_]</code>e(\a[) ]!_[r&gt; `dc`!\nn# ]d</em>n [[<em>cc)an\ [d]<em>e]a!<code>\dr([</code>b</em>][ra-e! -dd!#)!&gt;<em>[_]r[&gt;(e)r)( !en)a</em>[[](c#!`d]&gt;e&gt;a( #n</em>&gt;#-)[c\reb(*]\</p>
+
+=== DIVERGENCE #62 (run 1341) ===
+INPUT: \\dr--_\!_a_) !(*`rrcbn ``_!\n!nabr_a-\)_`>c(\)!rb_d\nd )!ae*!bd- r\\[\`d()[`[#c\]!)\`\_*]n-e]*`e-n n`*cc#!#na_(][([_ana]\e[\`c#!_\![#[#>err(>\]d dn) !`d#a]#\-]r#\[\r*]*>  ``])r#]\)ba])cr]edr_(_[)) r*d\`e\[\_d>n#c#*n d _a*\ea*\\!>`[e(n-\\n\#\_*(a[a(b)#\*!nea>>c*)
+RUST:  <p>\dr--<em>!<em>a</em>) !(<em><code>rrcbn ``_!\n!nabr_a-\)_</code>&gt;c()!rb_d\nd )!ae</em>!bd- r\[`d()[<code>[#c\]!)\</code>_<em>]n-e]</em><code>e-n n</code>*cc#!#na</em>(][([<em>ana]\e[`c#!</em>![#[#&gt;err(&gt;]d dn) !<code>d#a]#\-]r#\[\r*]*&gt;  ``])r#]\)ba])cr]edr_(_[)) r*d\</code>e[_d&gt;n#c#<em>n d _a</em>\ea*\!&gt;`[e(n-\n#_<em>(a[a(b)#*!nea&gt;&gt;c</em>)</p>
+NODE:  <p>\dr--<em>!<em>a</em>) !(<em><code>rrcbn ``_!\n!nabr_a-\)_</code>&gt;c()!rb_d\nd )!ae</em>!bd- r\[`d()[<code>[#c\]!)\</code>_*]n-e]*<code>e-n n</code>*cc#!#na_(][([_ana]\e[`c#!</em>![#[#&gt;err(&gt;]d dn) !<code>d#a]#\-]r#\[\r*]*&gt;  ``])r#]\)ba])cr]edr_(_[)) r*d\</code>e[_d&gt;n#c#<em>n d _a</em>\ea*\!&gt;`[e(n-\n#_<em>(a[a(b)#*!nea&gt;&gt;c</em>)</p>
+
+=== DIVERGENCE #63 (run 1352) ===
+INPUT: r]n>])`bd[) -eb-*]`_d)dabr(](\>da -)!-c>\`>(d\(c`]#` b`!_ce[_!_#cb>([#e)-`d*#!- [-e))\r--rn#b_dd#-!d[b)abc-rc e]!#rb\] -)e b)]`aae*!b !en \an n>\r\nc]ee_n>`>\c \`\*-bd_\a[\-#`-e_(c_nn_n__`a(\!`a**\#r!n[ \)!`d)\_](*\d_!c\-r#`]r(n *\]cc\]n#>ab#]*r`->>ac#[#\r([`*\n!-eb>\ e(#b )n*a]>n>[a]
+RUST:  <p>r]n&gt;])<code>bd[) -eb-*]</code><em>d)dabr(](&gt;da -)!-c&gt;`&gt;(d(c<code>]#</code> b<code>!_ce[_!_#cb&gt;([#e)-</code>d*#!- [-e))\r--rn#b_dd#-!d[b)abc-rc e]!#rb] -)e b)]<code>aae*!b !en \an n&gt;\r\nc]ee_n&gt;</code>&gt;\c `*-bd</em>\a[-#<code>-e_(c_nn_n__</code>a(!<code>a**\#r!n[ \)!</code>d)_](<em>\d_!c-r#<code>]r(n *\]cc\]n#&gt;ab#]*r</code>-&gt;&gt;ac#[#\r([`</em>\n!-eb&gt;\ e(#b )n*a]&gt;n&gt;[a]</p>
+NODE:  <p>r]n&gt;])<code>bd[) -eb-*]</code><em>d)dabr(](&gt;da -)!-c&gt;`&gt;(d(c<code>]#</code> b`!<em>ce[</em>!</em>#cb&gt;([#e)-<code>d*#!- [-e))\r--rn#b_dd#-!d[b)abc-rc e]!#rb\] -)e b)]</code>aae*!b !en \an n&gt;\r\nc]ee_n&gt;<code>&gt;\c \</code>*-bd_\a[-#<code>-e_(c_nn_n__</code>a(!<code>a**\#r!n[ \)!</code>d)_](<em>\d_!c-r#<code>]r(n *\]cc\]n#&gt;ab#]*r</code>-&gt;&gt;ac#[#\r([`</em>\n!-eb&gt;\ e(#b )n*a]&gt;n&gt;[a]</p>
+
+=== DIVERGENCE #64 (run 1364) ===
+INPUT: b\dbr#_be \!]\cr_*a\c* -)\** )n[a(>n[\\\![(_nnr__r)n>*\`_-bbd__\ de!re\\[d)*)c(\n!`(]([-*])(!\] b_\b!*!n[`-]>\(c!*!ee((>c**db[er >rd#ccr`d\)``dc]\\*_[#n]c\([ca*\c(d acn#r [\c_#an]dn#arc]()\-!!\dbcc\n*e>e)#a#`d \*c>\ad-)rd\)e!>\a`d\\de[d
+RUST:  <p>b\dbr#<em>be !]\cr</em><em>a\c</em> -)** )n[a(&gt;n[\![(<em>nnr__r)n&gt;*`</em>-bbd__\ de!re\[d)<em>)c(\n!<code>(]([-*])(!\] b_\b!*!n[</code>-]&gt;(c!</em>!ee((&gt;c**db[er &gt;rd#ccr<code>d\)``dc]\\*_[#n]c\([ca*\c(d acn#r [\c_#an]dn#arc]()\-!!\dbcc\n*e&gt;e)#a#</code>d *c&gt;\ad-)rd)e!&gt;\a`d\de[d</p>
+NODE:  <p>b\dbr#<em>be !]\cr</em><em>a\c</em> -)** )n[a(&gt;n[\![(<em>nnr__r)n&gt;<em>`_-bbd__\ de!re\[d)*)c(\n!`(]([-</em>])(!] b</em>\b!<em>!n[<code>-]&gt;\(c!*!ee((&gt;c**db[er &gt;rd#ccr</code>d)``dc]\</em><em>[#n]c([ca*\c(d acn#r [\c</em>#an]dn#arc]()-!!\dbcc\n*e&gt;e)#a#<code>d \*c&gt;\ad-)rd\)e!&gt;\a</code>d\de[d</p>
+
+=== DIVERGENCE #65 (run 1368) ===
+INPUT: `*>]]`\_n\(` nnr#>]>a\`(d-!`r!`na#_[\ r`*]`-())e>r[cr\[n\_d-b#ac#c]\`#\![[ne #d\_[ __ -]cc!)e#]br[ne)eb)) ra\dd\c`e]]!\[_]a]a`\]d> d``-)!`  __b!a`-dnr>_*\# en  !!_]_(`_*ear_#*b_b(\-__)([\![_de>e)n_\nbr_`)bn_ncde#\rb()bb)_#dr*err>(\[n(\-
+RUST:  <p><code>*&gt;]]</code>_n(<code> nnr#&gt;]&gt;a\</code>(d-!<code>r!</code>na#<em>[\ r<code>*]</code>-())e&gt;r[cr[n_d-b#ac#c]`#![[ne #d_[ __ -]cc!)e#]br[ne)eb)) ra\dd\c<code>e]]!\[_]a]a</code>]d&gt; d``-)!<code>  __b!a</code>-dnr&gt;</em><em># en  !!<em>]</em>(<code>_*ear_#*b_b(\-__)([\![_de&gt;e)n_\nbr_</code>)bn_ncde#\rb()bb)_#dr</em>err&gt;([n(-</p>
+NODE:  <p><code>*&gt;]]</code>_n(<code> nnr#&gt;]&gt;a\</code>(d-!<code>r!</code>na#<em>[\ r<code>*]</code>-())e&gt;r[cr[n_d-b#ac#c]`#![[ne #d_[ __ -]cc!)e#]br[ne)eb)) ra\dd\c`e]]![</em>]a]a<code>\]d&gt; d``-)!</code>  <strong>b!a<code>-dnr&gt;_*\# en  !!_]_(</code><em>*ear</em>#*b_b(-</strong>)([![<em>de&gt;e)n</em>\nbr_`)bn_ncde#\rb()bb)_#dr*err&gt;([n(-</p>
+
+=== DIVERGENCE #66 (run 1378) ===
+INPUT: (\ !_cn>e-n[_#-\d(a-!)][>rbbr\#`!e``\]]_rd! be_!*b(\!r\*--)\n)[e)]a#_])d>>-`e) e ]\b)#b(_#r![-\n((dd>*a` \#-( bac!!dr]>c*-e >r c>)_!>\->]_\n]\arbc](aba )>a)e*_d\be\n\dcr!b\d-_ [)(n\>)()--dbbn(r!\ ]) )*#`\]#]!\n!>erd#-)a[ )\ \a`c-
+RUST:  <p>(\ !<em>cn&gt;e-n[</em>#-\d(a-!)][&gt;rbbr#`!e``\]]<em>rd! be</em>!<em>b(!r*--)\n)[e)]a#_])d&gt;&gt;-<code>e) e ]\b)#b(_#r![-\n((dd&gt;*a</code> #-( bac!!dr]&gt;c</em>-e &gt;r c&gt;)<em>!&gt;-&gt;]</em>\n]\arbc](aba )&gt;a)e*<em>d\be\n\dcr!b\d-</em> [)(n&gt;)()--dbbn(r!\ ]) )*#<code>\]#]!\n!&gt;erd#-)a[ )\ \a</code>c-</p>
+NODE:  <p>(\ !<em>cn&gt;e-n[</em>#-\d(a-!)][&gt;rbbr#<code>!e``\]]_rd! be_!*b(\!r\*--)\n)[e)]a#_])d&gt;&gt;-</code>e) e ]\b)#b(_#r![-\n((dd&gt;*a<code> \#-( bac!!dr]&gt;c*-e &gt;r c&gt;)_!&gt;\-&gt;]_\n]\arbc](aba )&gt;a)e*_d\be\n\dcr!b\d-_ [)(n\&gt;)()--dbbn(r!\ ]) )*#</code>]#]!\n!&gt;erd#-)a[ )\ \a`c-</p>
+
+=== DIVERGENCE #67 (run 1381) ===
+INPUT: \a*`bd\eenrde*n\[b>_*bc*[e( ba*\-`a] \#)!>r[#r()-c(bn[a(!r`n_!\ed(n[r (> r!\__[\[*]#`>[#e`b]`[a`[e`c#)! )anna(_n[nb[e\\]>_)r[#e\*r_(![r!r\!\))\*r`\ed*(#`#`!rn(->)>(`e)e` !r !_\\_a)!dd()#>`>_\\\`\a>**)n>]_`\)*>c#n#\]ccr\([*cc[b!n_d]\r>\-!)!ab]bb bdrd`#
+RUST:  <p>\a*<code>bd\eenrde*n\[b&gt;_*bc*[e( ba*\-</code>a] #)!&gt;r[#r()-c(bn[a(!r<code>n_!\ed(n[r (&gt; r!\__[\[*]#</code>&gt;[#e<code>b]</code>[a<code>[e</code>c#)! )anna(<em>n[nb[e\]&gt;</em>)r[#e*r_(![r!r!))*r<code>\ed*(#</code>#<code>!rn(-&gt;)&gt;(</code>e)e<code> !r !_\\_a)!dd()#&gt;</code>&gt;<em>\`\a&gt;**)n&gt;]</em><code>\)*&gt;c#n#\]ccr\([*cc[b!n_d]\r&gt;\-!)!ab]bb bdrd</code>#</p>
+NODE:  <p>\a*<code>bd\eenrde*n\[b&gt;_*bc*[e( ba*\-</code>a] #)!&gt;r[#r()-c(bn[a(!r<code>n_!\ed(n[r (&gt; r!\__[\[*]#</code>&gt;[#e<code>b]</code>[a<code>[e</code>c#)! )anna(<em>n[nb[e\]&gt;</em>)r[#e*r_(![r!r!))*r<code>\ed*(#</code>#<code>!rn(-&gt;)&gt;(</code>e)e<code> !r !_\\_a)!dd()#&gt;</code>&gt;_\`\a&gt;**)n&gt;]_<code>\)*&gt;c#n#\]ccr\([*cc[b!n_d]\r&gt;\-!)!ab]bb bdrd</code>#</p>
+
+
+=== FINAL RESULTS ===
+Duration:    300s
+Total runs:  1396
+Panics:      0
+Divergences: 67
+Finished:    Wed Jun 10 01:12:28 IST 2026
+STATUS: FAIL

@@ -4,6 +4,7 @@ use marked_rs::parse;
 proptest! {
     #![proptest_config(ProptestConfig {
         cases: 500,
+        failure_persistence: None,
         .. ProptestConfig::default()
     })]
 

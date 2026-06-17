@@ -6,15 +6,36 @@
 
 The markdown parsing process is split into three distinct phases:
 
-```mermaid
-graph TD
-    A[Markdown Source String] --> B(Lexer)
-    B -->|Block-level Tokens| C(Inline Parser)
-    C -->|Fully resolved AST| D(Renderer)
-    D -->|HTML String| E[Output]
-
-    classDef stage fill:#2B3A42,stroke:#3F5A6C,stroke-width:2px,color:#fff;
-    class B,C,D stage;
+```text
++-----------------------+
+|                       |
+| Markdown Source String|
+|                       |
++-----------+-----------+
+            |
+            v
++-----------+-----------+
+|                       |
+|        Lexer          |  <-- Splits into Block-level Tokens
+|                       |
++-----------+-----------+
+            |
+            v
++-----------+-----------+
+|                       |
+|     Inline Parser     |  <-- Resolves emphasis & links
+|                       |
++-----------+-----------+
+            |
+            v
++-----------+-----------+
+|                       |
+|       Renderer        |  <-- Generates HTML String
+|                       |
++-----------+-----------+
+            |
+            v
+         Output
 ```
 
 ### 1. Lexer (Block-level Parsing)
@@ -24,17 +45,24 @@ The lexer handles complex block semantics such as list indentation rules and HTM
 ### 2. Inline Parser (Delimiter Stack)
 Unlike `marked.js` which uses catastrophic monolithic regexes for emphasis, `marked-rs` uses a CommonMark §6.2 compliant **Delimiter Stack** to resolve emphasis, strong emphasis, and links without backtracking.
 
-```mermaid
-sequenceDiagram
-    participant Lexer
-    participant InlineParser
-    participant Renderer
-
-    Lexer->>InlineParser: process_inlines(token)
-    InlineParser->>InlineParser: Scan for delimiters [* _ [ ]
-    InlineParser->>InlineParser: Resolve pairs via Delimiter Stack
-    InlineParser-->>Lexer: Return vector of InlineTokens
-    Lexer->>Renderer: Pass AST
+```text
+  Lexer                       InlineParser                      Renderer
+    |                              |                                |
+    |   process_inlines(token)     |                                |
+    |----------------------------->|                                |
+    |                              |--+ Scan for delimiters         |
+    |                              |  | [* _ [ ]                    |
+    |                              |<-+                             |
+    |                              |                                |
+    |                              |--+ Resolve pairs via           |
+    |                              |  | Delimiter Stack             |
+    |                              |<-+                             |
+    |                              |                                |
+    |  Return Vec<InlineToken>     |                                |
+    |<-----------------------------|                                |
+    |                              |                                |
+    |          Pass AST            |                                |
+    |-------------------------------------------------------------->|
 ```
 
 ### 3. Renderer (HTML Generation)

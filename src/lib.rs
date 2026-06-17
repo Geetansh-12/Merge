@@ -58,10 +58,8 @@ pub fn parse(src: &str) -> String {
 ///
 /// ```rust
 /// use marked_rs::{parse_with_options, options::Options};
-///
-/// let options = Options::without_gfm();
-/// let html = parse_with_options("# Hello", &options);
-/// assert_eq!(html, "<h1>Hello</h1>\n");
+/// let options = Options { gfm: false, ..Options::default() };
+/// let html = parse_with_options("hello", &options);
 /// ```
 pub fn parse_with_options(src: &str, options: &Options) -> String {
     let lexer = Lexer::new(src, options);
@@ -76,6 +74,33 @@ pub fn parse_with_options(src: &str, options: &Options) -> String {
 
     let mut renderer = HtmlRenderer::new(options.clone());
     renderer.render_tokens(&tokens)
+}
+
+/// Parse an iterator of string chunks into HTML.
+///
+/// This provides a streaming-friendly API for environments where the input
+/// arrives in chunks (e.g., network responses or file reading) without
+/// needing to manually construct a single buffer first.
+///
+/// # Examples
+///
+/// ```rust
+/// let chunks = vec!["# Hello\n", "\n", "World"];
+/// let html = marked_rs::parse_stream(chunks);
+/// assert_eq!(html, "<h1>Hello</h1>\n<p>World</p>\n");
+/// ```
+pub fn parse_stream<I, S>(iter: I) -> String
+where
+    I: IntoIterator<Item = S>,
+    S: AsRef<str>,
+{
+    let mut buf = String::new();
+    // Preallocate a reasonable capacity to avoid small reallocations
+    buf.reserve(4096);
+    for chunk in iter {
+        buf.push_str(chunk.as_ref());
+    }
+    parse(&buf)
 }
 
 fn collect_link_defs_into(

@@ -7,10 +7,10 @@
 
 | Metric | Value |
 |--------|-------|
-| CommonMark spec compliance | 97.7% |
+| CommonMark spec compliance | 97.5% |
 | unsafe blocks | 0 (`#![forbid(unsafe_code)]`) |
 | Binary size | ~1.2 MB |
-| Performance vs marked.js | **3.1x faster** |
+| Performance vs marked.js | **2.4x - 6.6x faster** |
 
 ## Performance
 

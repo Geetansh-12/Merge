@@ -1,0 +1,252 @@
+[
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": " r|;~~cr(~\\c\te`\"c;c!+d a*#]_`>r#|!\te)&\"n]#b\\\")r~\\\t\\e~*`_[\\ed;_d|b;c]'ace>_ -\\(~>\\",
+    "rust": "<p> r|;~~cr(~\\c\te<code>&quot;c;c!+d a*#]_</code>&gt;r#|!\te)&amp;&quot;n]#b&quot;)r~\\\t\\e~*`_[\\ed;<em>d|b;c]'ace&gt;</em> -(~&gt;\\</p>\n",
+    "node": "<p> r|;~~cr(<del>\\c\te<code>&quot;c;c!+d a*#]_</code>&gt;r#|!\te)&amp;&quot;n]#b&quot;)r</del>\\\t\\e<del>*`_[\\ed;<em>d|b;c]&#39;ace&gt;</em> -(</del>&gt;\\</p>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "~;!>nab\t_;b#\\& '[e!|;=!cce(>nb## [!|(''*~ra*>+_|*)-bab`n&",
+    "rust": "<p>~;!&gt;nab\t<em>;b#&amp; '[e!|;=!cce(&gt;nb## [!|(''<em>~ra</em>&gt;+</em>|*)-bab`n&amp;</p>\n",
+    "node": "<p><del>;!&gt;nab\t_;b#&amp; &#39;[e!|;=!cce(&gt;nb## [!|(&#39;&#39;*</del>ra*&gt;+_|*)-bab`n&amp;</p>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "&!-__ddnan#  '\"]\t\"=_\t';|b>+c[\" (n]ec]r\\)]*",
+    "rust": "<p>&amp;!-_<em>ddnan#  '&quot;]\t&quot;=</em>\t';|b&gt;+c[&quot; (n]ec]r)]*</p>\n",
+    "node": "<p>&amp;!-_<em>ddnan#  &#39;&quot;]\t&quot;=</em>\t&#39;;|b&gt;+c[&quot; (n]ec]r)]*</p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "]#)+;e\\e~\tb ([&`|d_ra\" *\"d(n=!n*-d;\t|ac_b;>'c ~>'\"nbca-d|n\\\"~\t#(\t(a*;rb!~e>+a][]]_",
+    "rust": "<p>]#)+;e\\e~\tb ([&amp;`|d_ra&quot; <em>&quot;d(n=!n</em>-d;\t|ac_b;&gt;'c ~&gt;'&quot;nbca-d|n&quot;~\t#(\t(a*;rb!~e&gt;+a][]]_</p>\n",
+    "node": "<p>]#)+;e\\e~\tb ([&amp;`|d_ra&quot; <em>&quot;d(n=!n</em>-d;\t|ac_b;&gt;&#39;c <del>&gt;&#39;&quot;nbca-d|n&quot;</del>\t#(\t(a*;rb!~e&gt;+a][]]_</p>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;",
+    "rust": "<p>&lt;div\nclass=&quot;foo&quot;</p>\n<blockquote>\n</blockquote>\n<p>&amp;&lt;&gt;&quot;</p>\n",
+    "node": "<div\nclass=\"foo\"\n>\n&amp;&lt;&gt;&quot;"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "_|*r`]d*> [\"*d=(\\\\>&>\tnb ( []de=-`\t-n]*~>cc-b-e&>b*\"-rr-+'\t|;-[+~-!(\\!c\\\t#d*d-(r[~~_;*d;\\`; n\t\\\\~",
+    "rust": "<p><em>|<em>r<code>]d*&gt; [&quot;*d=(\\\\&gt;&amp;&gt;\tnb ( []de=-</code>\t-n]</em>~&gt;cc-b-e&amp;&gt;b*&quot;-rr-+'\t|;-[+~-!(!c\\\t#d*d-(r[~~</em>;*d;`; n\t\\~</p>\n",
+    "node": "<p><em>|<em>r<code>]d*&gt; [&quot;*d=(\\\\&gt;&amp;&gt;\tnb ( []de=-</code>\t-n]</em><del>&gt;cc-b-e&amp;&gt;b*&quot;-rr-+&#39;\t|;-[+</del>-!(!c\\\t#d*d-(r[~~</em>;*d;`; n\t\\~</p>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": ">-~~r>*d[[!=a(e(\\+(c+(\"#'-(!",
+    "rust": "<blockquote>\n<p>-~~r&gt;*d[[!=a(e(+(c+(&quot;#'-(!</p>\n</blockquote>\n",
+    "node": "<blockquote>\n<p>-~~r&gt;*d[[!=a(e(+(c+(&quot;#&#39;-(!</p>\n</blockquote>\n"
+  },
+  {
+    "input": ";>a e|r')a",
+    "rust": "<p>;&gt;a e|r')a</p>\n",
+    "node": "<p>;&gt;a e|r&#39;)a</p>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "````````````````````````````````````````````````````````````",
+    "rust": "<pre><code></code></pre>\n",
+    "node": "<pre><code>\n</code></pre>\n"
+  },
+  {
+    "input": "[xxxxxxxxxxxxxxxxxxxx](<foo\\nbar>)",
+    "rust": "<p>[xxxxxxxxxxxxxxxxxxxx](&lt;foo\\nbar&gt;)</p>\n",
+    "node": "<p><a href=\"foo%5Cnbar\">xxxxxxxxxxxxxxxxxxxx</a></p>\n"
+  },
+  {
+    "input": "- - - - - - - - - - - - - - - - - - - - foo",
+    "rust": "<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>\n<ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n",
+    "node": "<ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li><ul>\n<li>foo</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n"
+  }
+]
